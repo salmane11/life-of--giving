@@ -1,0 +1,19 @@
+.footer{
+    background-color: var(--first-color);
+    display:flex;
+    flex-direction: column;
+}
+.subfooter{
+    display:flex;
+    align-items: center;
+}
+.sponsors{
+    display :flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.sponsortitle{
+    font-family:  var(--titles-font);
+    color:var(--fourth-color);
+    font-size: 25px;
+}

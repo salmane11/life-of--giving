@@ -6,6 +6,7 @@ function Navigation() {
     <nav className={styles.navigation}>
       <ul>
         <li>
+          {/** the active className help styling a link (only for navlink) when it's active*/}
           <NavLink
             className={({ isActive }) =>
               !isActive ? styles.link : styles.activelink
@@ -55,7 +56,7 @@ function Navigation() {
             Donors
           </NavLink>
         </li>
-        {/*add a link to the administrator page*/}
+        {/*!!!!!!!!!!!!!add a link to the administrator page!!!!!!!!!!!*/}
       </ul>
     </nav>
   );
