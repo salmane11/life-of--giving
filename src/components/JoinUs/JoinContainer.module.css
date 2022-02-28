@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+.title {
+  font-family: var(--titles-font);
+  font-size: 50px;
+  color: var(--fourth-color);
+  text-align: center;
+}

@@ -6,6 +6,7 @@
 .subfooter{
     display:flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 .sponsors{
     display :flex;

@@ -1,0 +1,25 @@
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+.slider img {
+  height: 466px;
+  flex: 0.7;
+  border-radius: 20px;
+}
+
+@media (max-width: 800px) {
+  .slider img {
+    height: 222px;
+    flex: 0.6;
+  }
+}
+@media (max-width: 400px) {
+  .slider img {
+    height: 122px;
+    flex: 0.6;
+  }
+}

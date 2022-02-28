@@ -1,0 +1,33 @@
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.reverse{
+    flex-direction: row-reverse;
+}
+.description {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--fourth-color);
+}
+.description h1 {
+  font-family: var(--titles-font);
+}
+.description p {
+  font-family: var(--normal-font);
+}
+.content img {
+  border-radius: 10px;
+  width: 300px;
+}
+
+@media (max-width: 800px) {
+    .content img {
+      width: 170px;
+    }
+  }

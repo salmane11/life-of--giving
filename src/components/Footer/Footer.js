@@ -32,7 +32,7 @@ function Footer() {
       <div className={styles.sponsors}>
         <h4 className={styles.sponsortitle}>Our Sponsors :</h4>
         {sponsors.map((sponsor) => (
-          <Sponsor name={sponsor.name} Icon={sponsor.Icon} />
+          <Sponsor key={sponsor.name} name={sponsor.name} Icon={sponsor.Icon} />
         ))}
       </div>
     </div>
