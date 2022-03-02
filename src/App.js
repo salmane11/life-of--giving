@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import SignInPage from "./pages/SignInPage";
 import DonorSignUpPage from "./pages/DonorSignUpPage";
 import OrganizationSignUpPage from "./pages/OrganizationSignUpPage";
+import Projects from "./pages/Projects";
 
 
 
@@ -19,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<HomePage className="element"/>} />
         <Route path="/about-us" element={<h1 className="element">this is about-us page</h1>} />
-        <Route path="/projects" element={<h1 className="element">this is projects page</h1>} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/associations" element={<h1 className="element">this is associations page</h1>} />
         <Route path="/donors" element={<h1 className="element">this is donors page</h1>} />
         <Route path="/sign-in" element={<SignInPage className="element"/>} />
