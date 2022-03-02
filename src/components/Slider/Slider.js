@@ -7,9 +7,9 @@ function Slider() {
   const [imageCounter, setImageCounter] = useState(1);
 
   /**these two handlers are used to handle images on the slider
-   * when the forward icon is clicked the couter is upgraded to counter+1 
-   * or going down to 1 
-  */
+   * when the forward icon is clicked the couter is upgraded to counter+1
+   * or going down to 1
+   */
   const backHandler = () => {
     if (imageCounter === 1) {
       setImageCounter(5);
@@ -23,12 +23,17 @@ function Slider() {
     } else {
       setImageCounter((counter) => counter + 1);
     }
-  },[imageCounter]);
+  }, [imageCounter]);
 
-  //use Effect is used to handle the time of replacing images every 4 seconds;
-  useEffect(()=>{
-    setTimeout(forwardHandler,10000);
-  },[forwardHandler])
+  //use Effect is used to handle the time of replacing images every 10 seconds;
+  //and the cleartimeout is used to clear the timer when the componenet is unmounted when we pass to another page for example
+  //the componenet is deleted from the DOM
+  useEffect(() => {
+    const timer = setTimeout(forwardHandler, 10000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [forwardHandler]);
 
   return (
     <div className={styles.slider}>

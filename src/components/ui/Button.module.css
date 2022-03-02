@@ -3,3 +3,8 @@
     color: var(--fourth-color);
     font-family: var(--normal-font);
 }
+.mybutton:hover{
+    border: 1px solid var(--fourth-color);
+    background-color: var(--first-color);
+    color: var(--third-color);
+}

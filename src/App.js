@@ -4,6 +4,9 @@ import Header from "./components/Header/Header";
 import React from "react";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage";
+import SignInPage from "./pages/SignInPage";
+import DonorSignUpPage from "./pages/DonorSignUpPage";
+import OrganizationSignUpPage from "./pages/OrganizationSignUpPage";
 
 
 
@@ -19,7 +22,9 @@ function App() {
         <Route path="/projects" element={<h1 className="element">this is projects page</h1>} />
         <Route path="/associations" element={<h1 className="element">this is associations page</h1>} />
         <Route path="/donors" element={<h1 className="element">this is donors page</h1>} />
-        <Route path="/sign-in" element={<h1 className="element">this is sign-in page</h1>} />
+        <Route path="/sign-in" element={<SignInPage className="element"/>} />
+        <Route path="/donor-sign-up" element={<DonorSignUpPage className="element"/>} />
+        <Route path="/organization-sign-up" element={<OrganizationSignUpPage className="element"/>} />
         {/** the star * is for other paths which are not listed before (page does not exist)*/}
         <Route path="*" element={<h1 className="element">404 : page not found</h1>} />
       </Routes>
