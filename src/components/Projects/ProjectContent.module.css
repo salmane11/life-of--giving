@@ -1,0 +1,69 @@
+.imageContainer{
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;    
+}
+
+#projectTitle{
+    font-size: 40px;
+    font-family: var(--titles-font);
+    margin-left: 190px;
+    color: var(--third-color);
+}
+
+.description{
+    /* background-color: violet; */
+    /* border: 3px groove var(--third-color);
+    border-radius: 25px; */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+    flex: 0 0 35%;
+    margin-left: -200px;
+}
+
+@media (max-width: 1500px){
+    .description{
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 800px){
+    .imageContainer{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.description > * {
+    text-align: center;
+    font-family: var(--normal-font);
+    color: var(--third-color);
+}
+
+.imageContainer img{
+    width: 500px;
+    border-radius: 25px;
+}
+
+.imageContainer label{
+    font-size: 25px;
+}
+
+.dueDate{
+    font-family: var(--normal-font);
+    color: var(--third-color);
+}
+
+.donateBtn{
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    /* border: none; */
+    font-family: var(--normal-font);
+}

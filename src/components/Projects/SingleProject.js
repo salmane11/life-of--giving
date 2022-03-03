@@ -1,5 +1,4 @@
 import styles from './SingleProject.module.css';
-import project1 from '../../../src/assets/2.jpg';
 import ProgressBar from "@ramonak/react-progress-bar";
 
 const SingleProject = ( {name, src, progression, target} ) => {

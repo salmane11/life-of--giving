@@ -5,10 +5,9 @@ function Projects() {
     return (
         <>
             <ProjectsSlogan />
-            {/* <SingleProject /> */}
             <ProjectsListed/>
         </>
     )
 }
 
-export default Projects
+export default Projects;
