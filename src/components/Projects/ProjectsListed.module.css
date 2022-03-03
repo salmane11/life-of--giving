@@ -1,0 +1,19 @@
+.projectsContainer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 0px;
+}
+.loadMoreBtn{
+    margin-left: 50%;
+    margin-right: 50%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    width: 10%;
+    height: 40px;
+    align-items: center;
+    font-size: 15px;
+    font-family: var(--normal-font);
+    border: none;
+}
+
