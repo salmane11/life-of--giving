@@ -3,9 +3,13 @@ import styles from "./SignInForm.module.css";
 import { Link } from "react-router-dom";
 import PersonIcon from "@mui/icons-material/Person";
 import GroupIcon from "@mui/icons-material/Group";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import userContext from "../../store/userContext";
 
 function SignInForm() {
+
+  const userctx=useContext(userContext);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -24,6 +28,16 @@ function SignInForm() {
 
     //TODO
     //email and password detection (admin, donor, organization)
+    if(email==="admin@gmail.com" && password==="123456789"){
+      userctx.login("admin","administrator");
+    }else if(email==="donor@gmail.com" && password==="123456789"){
+      userctx.login("donor","donor");
+    }else if(email==="organization@gmail.com" && password==="123456789"){
+      userctx.login("organization","organization");
+    }
+
+    console.log(userctx.loggedIn);
+    console.log(userctx.userRole);
 
     console.log(email, password);
     setEmail("");
