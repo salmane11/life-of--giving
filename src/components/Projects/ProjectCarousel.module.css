@@ -1,0 +1,15 @@
+
+.carousel{
+    width:500px;
+    height:200px;
+    /* margin: 0px; */
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.carousel img {
+    width:500px;
+    height:300px;
+    border-radius: 25px;
+}

@@ -1,30 +1,29 @@
 .imageContainer{
-    margin: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;    
+    align-items: center;
+    column-gap: 30px;
 }
 
 #projectTitle{
+    margin-right: auto !important;
+    margin-top: 20px;
     font-size: 40px;
     font-family: var(--titles-font);
     margin-left: 190px;
     color: var(--third-color);
+    margin-bottom: 0px;
 }
 
 .description{
-    /* background-color: violet; */
-    /* border: 3px groove var(--third-color);
-    border-radius: 25px; */
-    padding: 30px;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 40px;
-    flex: 0 0 35%;
-    margin-left: -200px;
+    row-gap: 30px;
 }
+
 
 @media (max-width: 1500px){
     .description{
@@ -40,14 +39,10 @@
 }
 
 .description > * {
+    margin-top: 25px;
     text-align: center;
     font-family: var(--normal-font);
     color: var(--third-color);
-}
-
-.imageContainer img{
-    width: 500px;
-    border-radius: 25px;
 }
 
 .imageContainer label{
@@ -64,6 +59,6 @@
     width: 200px;
     height: 50px;
     border-radius: 15px;
-    /* border: none; */
     font-family: var(--normal-font);
 }
+/*  */

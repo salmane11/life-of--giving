@@ -1,0 +1,25 @@
+.organizationSection h1 {
+    font-family: var(--titles-font);
+    color: var(--third-color);
+    font-size: 30px;
+    padding-left: 15px;
+    border-left: 4px solid var(--second-color);
+}
+
+.organizationSection {
+    margin-left: -600px;
+    flex: 0 0 100%;
+}
+
+.organizationDesc{
+    background-color: tomato;
+}
+
+.organizationDesc img{
+    width: 200px;
+}
+
+.organizationDesc label {
+    font-family: var(--normal-font);
+    color: var(--fourth-color);
+}
