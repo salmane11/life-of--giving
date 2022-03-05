@@ -4,15 +4,15 @@ import ProgressBar from '@ramonak/react-progress-bar'
 import Button from '../ui/Button'
 import ProjectCarousel from './ProjectCarousel'
 
+// the section of slider and the metadata of the project
+// including the due date, the target and the donate button
 const ProjectContent = () => {
     return (
         <>
             <h1 id={styles.projectTitle}>Winter is coming</h1>
             <div className={styles.imageContainer}>
                   {/* <img src={image1} alt='project-picture'/> */}
-                <div id={styles.carousel}>
                     <ProjectCarousel />
-                </div>
                 <div className={styles.description}>
                     <h2 className={styles.dueDate}>Due date: 15 May 2022</h2>
                     <label> 1000$ raised of 5000$ target </label>

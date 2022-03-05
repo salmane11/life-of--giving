@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    column-gap: 30px;
+    column-gap: 36px;
 }
 
 #projectTitle{
@@ -46,12 +46,13 @@
 }
 
 .imageContainer label{
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .dueDate{
     font-family: var(--normal-font);
     color: var(--third-color);
+    font-size: 22px;
 }
 
 .donateBtn{

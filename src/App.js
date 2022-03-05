@@ -9,6 +9,7 @@ import DonorSignUpPage from "./pages/DonorSignUpPage";
 import OrganizationSignUpPage from "./pages/OrganizationSignUpPage";
 import Projects from "./pages/Projects";
 import ProjectDescription from "./pages/ProjectDescription";
+import DonationPage from "./pages/DonationPage";
 
 
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/about-us" element={<h1 className="element">this is about-us page</h1>} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/project-description" element={<ProjectDescription className="element"/>} />
+        <Route path='/donation' element={<DonationPage className="element"/>} />
         <Route path="/associations" element={<h1 className="element">this is associations page</h1>} />
         <Route path="/donors" element={<h1 className="element">this is donors page</h1>} />
         <Route path="/sign-in" element={<SignInPage className="element"/>} />

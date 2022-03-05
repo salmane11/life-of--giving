@@ -1,6 +1,7 @@
 import styles from './SingleProject.module.css';
 import ProgressBar from "@ramonak/react-progress-bar";
 
+// the component of a single project description in 
 const SingleProject = ( {name, src, progression, target} ) => {
     return (
         <>

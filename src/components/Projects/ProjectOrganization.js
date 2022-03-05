@@ -5,6 +5,7 @@ import {Container, Row, Col} from 'react-bootstrap';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
+// the title component of each section of the page
 const TitleSection = ({title}) => {
     return (
         <div style={{width:'77%', marginBottom:10}}>
@@ -19,6 +20,7 @@ const TitleSection = ({title}) => {
     )
 }
 
+// the organization which published the project post
 const ProjectOrganization = () => {
 
     return (

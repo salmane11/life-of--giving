@@ -1,5 +1,6 @@
 import styles from './ProjectTextDescription.module.css';
 
+//the text description of each project in its description page
 const ProjectTextDescription = () => {
     return (
         <>

@@ -16,10 +16,7 @@ import project9 from '../../assets/freefood.jpg';
 
 import SingleProject from "./SingleProject";
 
-// const projectsPerPage=6;
-// //here we can store the projects that are going to be loaded
-// const arrayForHoldingProjects = [];
-
+//the list of all projects listed in the page
 function ProjectsListed() {
 
     const [projects, setProjects] = useState([
