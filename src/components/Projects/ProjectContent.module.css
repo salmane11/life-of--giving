@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    column-gap: 50px;
+    column-gap: 70px;
     margin-bottom: 10px;
 }
 
@@ -14,7 +14,7 @@
     font-family: var(--titles-font);
     margin-left: 170px;
     color: var(--third-color);
-    margin-bottom: 0px;
+    margin-bottom: 20px;
 }
 
 .description{
