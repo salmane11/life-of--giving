@@ -17,7 +17,7 @@ const ProjectContent = () => {
                     <h2 className={styles.dueDate}>Due date: 15 May 2022</h2>
                     <label> 1000$ raised of 5000$ target </label>
                     <ProgressBar 
-                            completed={20} 
+                            completed={40} 
                             bgColor={'#ffc900'}
                             baseBgColor = {'#fff89a'}
                             width = {450}
