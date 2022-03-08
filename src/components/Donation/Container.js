@@ -1,4 +1,5 @@
 import ProjectCarousel from "../Projects/ProjectCarousel"
+import { TitleSection } from "../Projects/ProjectOrganization"
 import styles from './Container.module.css'
 import EntityConverter from "./EntityConverter"
 
@@ -12,9 +13,10 @@ const Container = () => {
                         <p>This project will help 429 families, 1023 individuals. 
                             You are helping CAS organization to achieve its annual goal. 
                             Please fill out the form to complete your donation.</p>
-                        <EntityCalculator />
+                        <EntityConverter entity={'family'} entityPrice={20} target={900}/>
                     </div>
                 </div>
+                <TitleSection title={'Personal Information'} />
             </div>
         </>
     )
