@@ -1,6 +1,6 @@
-.logo {
-    flex:0.2;
+.slogan{
     font-family: var(--titles-font);
     color: var(--fourth-color);
-    margin-left: 50px;
+    margin-left: 150px;
+    margin-top: 15px;
 }

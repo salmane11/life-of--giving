@@ -1,0 +1,73 @@
+.projectContainer{
+    margin-left: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    /* margin:20px; */
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: rgb(223, 188, 124); */
+}
+
+.projectImage{
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.projectContainer:hover{
+    -ms-transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+    transition: 0.2s;
+    background-color: var(--first-color);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.wrapper {
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    overflow-y: hidden;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 800px){
+    .projectImage{
+        width: 290px;
+        /* height: 150px; */
+        transition: 0.5s;
+    }
+    .projectContainer{
+        width: 310px;
+        display: flex;
+        justify-content: center;
+        transition: 0.5s;
+    }
+}
+
+
+#projectName{
+    font-family: var(--titles-font);
+    color: var(--fourth-color);
+    font-size: 25px;
+    text-align: center;
+}
+
+.ProgressionSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 5px;
+}
+
+.target{
+    font-family: var(--normal-font);
+    color: var(--fourth-color);
+    height: 20px;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow-y: hidden;
+    text-align: center;
+}
