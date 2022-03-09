@@ -1,0 +1,30 @@
+.donorstable {
+  flex: 0.48;
+  background-color: var(--first-color);
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: var(--fourth-color);
+  font-family: var(--normal-font);
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.donors {
+  width: 100%;
+}
+.header {
+  border-bottom: 2px solid var(--second-color);
+  text-align: end;
+}
+.donors td {
+  padding-bottom: 5px;
+  width: 50%;
+}
+.donorstable button {
+  margin-top: 15px;
+  width: 20%;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 20px;
+}

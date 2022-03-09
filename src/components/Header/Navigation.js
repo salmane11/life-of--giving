@@ -18,7 +18,7 @@ function Navigation() {
               className={({ isActive }) =>
                 !isActive ? styles.link : styles.activelink
               }
-              to="/dashboard"
+              to="/administrator-dashboard"
             >
               Dashboard
             </NavLink>

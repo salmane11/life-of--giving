@@ -1,0 +1,24 @@
+.projectslist {
+  background-color: var(--first-color);
+  border-radius: 15px;
+  margin-top: 10px;
+  color: var(--fourth-color);
+  padding-bottom: 15px;
+  text-align: center;
+  font-family: var(--normal-font);
+  font-size: 20px;
+}
+.projectstable {
+  width: 100%;
+}
+.projectstable td {
+  border-top: 2px solid var(--second-color);
+  padding-top: 5px;
+}
+.projectslist button{
+    margin-top: 15px;
+    width:20%;
+    height:30px;
+    border-radius: 5px;
+    font-size: 20px;
+}

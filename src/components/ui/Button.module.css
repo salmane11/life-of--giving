@@ -2,6 +2,7 @@
     background-color: var(--second-color);
     color: var(--fourth-color);
     font-family: var(--normal-font);
+    border: none;
 }
 .mybutton:hover{
     border: 1px solid var(--fourth-color);

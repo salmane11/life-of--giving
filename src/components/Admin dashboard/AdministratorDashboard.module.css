@@ -1,0 +1,14 @@
+.dashboard {
+  display: flex;
+  justify-content: space-around;
+}
+.profile {
+  flex: 0.2;
+}
+.statistics {
+  flex: 0.75;
+}
+.users {
+  display: flex;
+  justify-content: space-between;
+}

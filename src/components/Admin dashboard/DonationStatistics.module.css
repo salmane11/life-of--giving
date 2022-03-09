@@ -1,0 +1,27 @@
+.statistics{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: var(--first-color);
+    border-radius: 15px;
+    margin-top: 10px;
+    font-family: var(--normal-font);
+    font-size: 17px;
+}
+.block{
+    flex:0.31;
+    text-align: center;
+    padding-right: 10px;
+    border-right: 3px solid var(--second-color);
+    color: var(--fourth-color);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.block p{
+    color:green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
