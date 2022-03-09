@@ -14,6 +14,7 @@ const SingleProject = ( {name, src, progression, target} ) => {
                         bgColor={'#ffc900'}
                         baseBgColor = {'#fff89a'}
                         width = {350}
+                        height = {'auto'}
                         className= {styles.wrapper}
                     />
                     <p className={styles.target}>{target}</p>

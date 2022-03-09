@@ -3,10 +3,10 @@ import ProjectsSlogan from "../components/Projects/ProjectsSlogan"
 
 function Projects() {
     return (
-        <>
-            <ProjectsSlogan />
-            <ProjectsListed/>
-        </>
+            <div  style={{overflowX:'hidden'}}> 
+                <ProjectsSlogan />
+                <ProjectsListed/>
+            </div>
     )
 }
 

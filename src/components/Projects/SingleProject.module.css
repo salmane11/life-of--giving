@@ -1,6 +1,5 @@
 .projectContainer{
     margin-left: 25px;
-    /* margin-right: 5px; */
     margin-top: 15px;
     margin-bottom: 15px;
     /* margin:20px; */
@@ -29,6 +28,8 @@
 .wrapper {
     border: 3px solid rgb(255, 255, 255);
     border-radius: 20px;
+    overflow-y: hidden;
+    margin-bottom: 10px;
 }
 
 @media (max-width: 800px){
@@ -65,6 +66,8 @@
     font-family: var(--normal-font);
     color: var(--fourth-color);
     height: 20px;
-    font-size: 20px;
+    font-size: 18px;
     white-space: nowrap;
+    overflow-y: hidden;
+    text-align: center;
 }

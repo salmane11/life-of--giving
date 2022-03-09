@@ -1,7 +1,8 @@
 .projectsContainer{
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-gap: 0px;
+    /* width: fit-content; */
+    
 }
 .loadMoreBtn{
     margin-left: 50%;
@@ -16,4 +17,5 @@
     font-family: var(--normal-font);
     border: none;
 }
+
 
