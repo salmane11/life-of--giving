@@ -10,12 +10,14 @@ import OrganizationSignUpPage from "./pages/OrganizationSignUpPage";
 import Projects from "./pages/Projects";
 import ProjectDescription from "./pages/ProjectDescription";
 import DonationPage from "./pages/DonationPage";
+import { UserContextProvider } from "./store/userContext";
+
 
 
 
 function App() {
   return (
-    <React.Fragment>
+    <UserContextProvider>
       {/* react help developping spa and react-router-dom help simulating pages
       using routes and their paths and the elements you need to insert into a route */}
       <Header />
@@ -27,6 +29,9 @@ function App() {
         <Route path='/donation' element={<DonationPage className="element"/>} />
         <Route path="/associations" element={<h1 className="element">this is associations page</h1>} />
         <Route path="/donors" element={<h1 className="element">this is donors page</h1>} />
+        <Route path="/dashboard" element={<h1 className="element">this is the dashboard</h1>} />
+        <Route path="/donor-profile" element={<h1 className="element">this is the donor-profile</h1>} />
+        <Route path="/organization-profile" element={<h1 className="element">this is the organization-profile</h1>} />
         <Route path="/sign-in" element={<SignInPage className="element"/>} />
         <Route path="/donor-sign-up" element={<DonorSignUpPage className="element"/>} />
         <Route path="/organization-sign-up" element={<OrganizationSignUpPage className="element"/>} />
@@ -34,7 +39,7 @@ function App() {
         <Route path="*" element={<h1 className="element">404 : page not found</h1>} />
       </Routes>
       <Footer/>
-    </React.Fragment>
+    </UserContextProvider>
   );
 }
 
