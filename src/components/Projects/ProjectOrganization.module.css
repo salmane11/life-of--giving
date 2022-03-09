@@ -1,0 +1,37 @@
+.titles {
+    margin-top: 20px;
+    font-family: var(--titles-font);
+    color: var(--third-color);
+    font-size: 30px;
+    padding-left: 15px;
+    border-left: 4px solid var(--second-color);
+}
+
+
+.organizationDesc{
+    width: 600px;
+    /* margin-top: 20px; */
+    margin-left: -450px;
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+}
+
+.organizationDesc img{
+    width: 200px;
+}
+
+.organizationDesc label {
+    font-family: var(--normal-font);
+    color: var(--fourth-color);
+}
+#projectOrganizationPic{
+    border-radius: 10px;
+    border: 2px groove ;
+}
+#organizationInfos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+    color: var(--third-color);
+}

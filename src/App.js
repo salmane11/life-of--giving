@@ -7,7 +7,11 @@ import HomePage from "./pages/HomePage";
 import SignInPage from "./pages/SignInPage";
 import DonorSignUpPage from "./pages/DonorSignUpPage";
 import OrganizationSignUpPage from "./pages/OrganizationSignUpPage";
+import Projects from "./pages/Projects";
+import ProjectDescription from "./pages/ProjectDescription";
+import DonationPage from "./pages/DonationPage";
 import { UserContextProvider } from "./store/userContext";
+
 
 
 
@@ -20,7 +24,9 @@ function App() {
       <Routes>
         <Route path="/" exact element={<HomePage className="element"/>} />
         <Route path="/about-us" element={<h1 className="element">this is about-us page</h1>} />
-        <Route path="/projects" element={<h1 className="element">this is projects page</h1>} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/project-description" element={<ProjectDescription className="element"/>} />
+        <Route path='/donation' element={<DonationPage className="element"/>} />
         <Route path="/associations" element={<h1 className="element">this is associations page</h1>} />
         <Route path="/donors" element={<h1 className="element">this is donors page</h1>} />
         <Route path="/dashboard" element={<h1 className="element">this is the dashboard</h1>} />

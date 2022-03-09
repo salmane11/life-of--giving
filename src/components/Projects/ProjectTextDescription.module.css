@@ -1,0 +1,12 @@
+.descriptionText{
+    margin-left: 160px;
+    margin-right: 160px;
+    margin-top: 20px;
+    font-family: var(--normal-font);
+    font-size: 20px;
+    color: var(--third-color);
+    text-align: center;
+}
+.descriptionText p{
+    text-align: justify;
+}
