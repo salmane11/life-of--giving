@@ -2,6 +2,7 @@ import ProjectCarousel from "../Projects/ProjectCarousel"
 import { TitleSection } from "../Projects/ProjectOrganization"
 import styles from './Container.module.css'
 import EntityConverter from "./EntityConverter"
+import StripeContainer from '../../Stripe/StripeContainer'
 
 const Container = () => {
     return (
@@ -17,6 +18,7 @@ const Container = () => {
                     </div>
                 </div>
                 <TitleSection title={'Personal Information'} />
+                <StripeContainer />
             </div>
         </>
     )
