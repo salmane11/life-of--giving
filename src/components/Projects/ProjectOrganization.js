@@ -6,15 +6,17 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
 // the title component of each section of the page
-const TitleSection = ({title}) => {
+const TitleSection = ({title, marginLeftTitle}) => {
     return (
         <div style={{width:'77%', marginBottom:10}}>
                 <h1 style={{
                     fontFamily: 'var(--titles-font)',
                     color: 'var(--third-color)',
                     fontSize: 30,
-                    paddingLeft: 15,
+                    paddingLeft: 16,
                     borderLeft: '4px solid var(--second-color)',
+                    marginLeft: marginLeftTitle,
+            
                 }}> {title} </h1>
         </div>
     )
@@ -25,7 +27,7 @@ const ProjectOrganization = () => {
 
     return (
         <>
-            <TitleSection title={'Organization'}/>
+            <TitleSection title={'Organization'} marginLeftTitle={0}/>
                 <div className={styles.organizationDesc}>
                     <Container>
                         <Row>

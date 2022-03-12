@@ -1,0 +1,62 @@
+.donationForm{
+  margin-top: -40px;
+  align-self: center;
+}
+#labelsDev{
+  background-color: var(--first-color);
+  margin: auto;
+  margin-bottom: 40px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.formTable{
+  background-color: var(--first-color);
+  margin: auto;
+  width: 70%;
+}
+
+input {
+  border-radius: 5px;
+  border: 2px groove grey;
+  width: 400px;
+  height: 40px;
+}
+.inputs{
+  width: 70%;
+}
+#submitBtn{
+  background-color: var(--second-color);
+  width: 25%;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.labels{
+  width: 450px;
+  font-family: var(--normal-font);
+  color: var(--third-color);
+  font-size: 20px;
+  padding-left: 10px ;
+  padding-right: 10px;
+}
+.cardinfos{
+  border-radius: 5px;
+  border: 2px groove grey;
+  width: 400px;
+  height: 40px;
+  background-color: white;
+  line-height: 30px;
+  
+}
+/* ::-webkit-input-placeholder { */
+  /* vertical-align:middle; */
+/* } */
+td{
+  padding: 9px;
+}
+#btnContainer{
+  display: flex;
+  justify-content: center;
+}

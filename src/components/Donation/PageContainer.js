@@ -1,10 +1,10 @@
 import ProjectCarousel from "../Projects/ProjectCarousel"
 import { TitleSection } from "../Projects/ProjectOrganization"
-import styles from './Container.module.css'
+import styles from './PageContainer.module.css'
 import EntityConverter from "./EntityConverter"
 import StripeContainer from '../../Stripe/StripeContainer'
 
-const Container = () => {
+const PageContainer = () => {
     return (
         <>
             <div className={styles.outsideContainer}>
@@ -17,10 +17,10 @@ const Container = () => {
                         <EntityConverter entity={'family'} entityPrice={20} target={900}/>
                     </div>
                 </div>
-                <TitleSection title={'Personal Information'} />
+                <TitleSection title={'Payment Information'} marginLeftTitle={'52%'}/>
                 <StripeContainer />
             </div>
         </>
     )
 }
-export default Container;
+export default PageContainer;
