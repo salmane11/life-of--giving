@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+}
+#left{
+    background-color: var(--first-color);
+    flex: 1.5 1 auto ;
+}
+#right{
+    background-color: brown;
+    flex: 1 2 auto;
+}
+.split{
+    /* flex: 1 1 auto; */
+    margin-bottom: 10px;
+}
