@@ -1,0 +1,22 @@
+.attributeSection{
+    font-family: var(--normal-font);
+    padding: 10px;
+}
+
+button{
+    padding: 0.3em 1.5em;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #ffffff;
+    border: 1px solid var(--first-color);
+    transition: all .3s;
+    font-family: var(--normal-font);
+    color: var(--third-color);
+    margin-top: 5px;
+    margin-left: 10px;
+}
+button:hover{
+    border: 1px solid var(--second-color);
+    transition: 0.2s;
+}

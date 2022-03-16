@@ -1,12 +1,14 @@
 .container{
     display: flex;
+    border: 1px solid var(--first-color);
 }
 #left{
     background-color: var(--first-color);
     flex: 1.5 1 auto ;
+    padding-top: 10px;
 }
 #right{
-    background-color: brown;
+    /* background-color: rgb(241, 206, 206); */
     flex: 1 2 auto;
 }
 .split{

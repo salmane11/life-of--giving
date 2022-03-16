@@ -1,0 +1,46 @@
+.AppHeader{
+    padding: 0.3em 1.5em;
+    margin-bottom: 10px;
+    max-width: 200px;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #ffffff;
+    border: 1px solid white;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px var(--first-color);
+    font-family: var(--normal-font);
+    color: var(--third-color);
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+.editorForm{
+    background-color: antiquewhite;
+    margin-left: 50px;
+    margin-right: 30px;
+}
+.wrapperClass{
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.editorClass{
+    background-color:lightgray;
+    padding: 1rem;
+    border: 1px solid #ccc;
+}   
+.toolbarClass{
+    border: 1px solid #ccc;
+}
+
+/* .textArea{
+    border: #c5c5c5;
+    border-radius:0.5em;
+    margin-left: 50px;
+    width: 92%;
+    padding-left: 12px;
+    padding-top: 10px;
+} */
