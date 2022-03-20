@@ -4,6 +4,8 @@ body {
   --third-color: #086e7d;
   --fourth-color: #086e7d;
 
+  /* background-color: white; */
+
   --titles-font: "Dancing Script", cursive;
   --normal-font: "Poppins";
 
@@ -19,3 +21,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+

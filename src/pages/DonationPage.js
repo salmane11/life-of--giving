@@ -1,10 +1,10 @@
-import Container from "../components/Donation/Container";
+import PageContainer from "../components/Donation/PageContainer";
 
 
 const DonationPage = () => {
     return (
         <>
-            <Container />
+            <PageContainer />
         </>
     )
 }

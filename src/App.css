@@ -3,5 +3,5 @@ body {
   flex-direction: column;
 }
 .element{
-  min-height: 70vh;
+    min-height: 70vh;
 }

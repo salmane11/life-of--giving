@@ -11,8 +11,10 @@ import Projects from "./pages/Projects";
 import ProjectDescription from "./pages/ProjectDescription";
 import DonationPage from "./pages/DonationPage";
 import { UserContextProvider } from "./store/userContext";
+import PostProjectPage from "./pages/PostProjectPage";
 import AdministratorDashboardPage from "./pages/AdministratorDashboardPage";
 import RequestsPage from "./pages/RequestsPage";
+
 
 
 
@@ -26,9 +28,10 @@ function App() {
       <Routes>
         <Route path="/" exact element={<HomePage className="element"/>} />
         <Route path="/about-us" element={<h1 className="element">this is about-us page</h1>} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects" element={<Projects className="element"/>} />
         <Route path="/project-description" element={<ProjectDescription className="element"/>} />
         <Route path='/donation' element={<DonationPage className="element"/>} />
+        <Route path='/post-project' element={<PostProjectPage  className="element"/>}></Route>
         <Route path="/associations" element={<h1 className="element">this is associations page</h1>} />
         <Route path="/donors" element={<h1 className="element">this is donors page</h1>} />
         <Route path="/administrator-dashboard" element={<AdministratorDashboardPage />} />
@@ -38,7 +41,6 @@ function App() {
         <Route path="/sign-in" element={<SignInPage className="element"/>} />
         <Route path="/donor-sign-up" element={<DonorSignUpPage className="element"/>} />
         <Route path="/organization-sign-up" element={<OrganizationSignUpPage className="element"/>} />
-        {/** the star * is for other paths which are not listed before (page does not exist)*/}
         <Route path="*" element={<h1 className="element">404 : page not found</h1>} />
       </Routes>
       <Footer/>
