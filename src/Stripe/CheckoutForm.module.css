@@ -47,8 +47,6 @@ input {
   width: 400px;
   height: 40px;
   background-color: white;
-  line-height: 30px;
-  
 }
 /* ::-webkit-input-placeholder { */
   /* vertical-align:middle; */
@@ -59,4 +57,26 @@ td{
 #btnContainer{
   display: flex;
   justify-content: center;
+}
+/****Donation Modal Popup****/
+
+.popupModal{
+  width: 400px;
+  height: auto;
+  text-align: center;
+  border-radius: 25px;
+  border: 1px groove var(--second-color);
+  background-color: white;
+  font-family: var(--normal-font);
+  color: var(--third-color);
+  font-size: 20px;
+  /* background-color: aqua; */
+  /* 
+  width: 800px;
+  height: 400px; */
+}
+.closeButton{
+  text-align: center;
+  background-color: var(--second-color);
+  width: auto;
 }

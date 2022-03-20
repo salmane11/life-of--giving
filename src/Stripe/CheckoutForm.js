@@ -3,19 +3,23 @@ import {  useStripe, useElements, CardCvcElement, CardNumberElement, CardExpiryE
 import axios from "axios";
 import { Button } from "@material-ui/core";
 import styles from './CheckoutForm.module.css'
+import { useModal } from 'react-hooks-use-modal';
 
 const CARD_OPTIONS = {
 	style: {
 		base: {
 			":-webkit-autofill": { color: "#fce883" },
-			"::placeholder": { color: "gray", verticalAlign: "middle", lineHeight: 30, }
+			"::placeholder": { color: "gray", }
 		}
 	}
 }
+
+
 export const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState('');
+  const [modalPopupMsg, setModalPopupMsg] = useState('Please make sure you filled all the fields ');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -37,18 +41,30 @@ export const CheckoutForm = () => {
                 id: id,
             }
         );
+
         console.log("Stripe 35 | data", response.data.success);
         if(response.data.success){
             console.log("CheckoutForm.js 25 | payment successful!");
+            setModalPopupMsg('Your Donation is done successfully! Thanks for being our hero');
+
         }
       } catch (error){
         console.log("CheckoutForm.js 28 | ", error);
+        setModalPopupMsg('Error has accured during donation process, could you try later!')
       }
     } else {
       setError(error.message)
       console.log(error.message);
+      setModalPopupMsg(error.message)
     }
   };
+  
+  /*********Modal popup after submit ******/
+  const  [Modal, open, close, isOpen] = useModal('root', {
+    preventScroll: true,
+    closeOnOverlayClick: false
+  });
+
 
   return (
     <>
@@ -96,9 +112,17 @@ export const CheckoutForm = () => {
           </tr>
       </table>
           <div id={styles.btnContainer}>
-          <Button type="submit" variant="contained" disabled={!stripe} id={styles.submitBtn}>
+          <Button type="submit" variant="contained" disabled={!stripe} id={styles.submitBtn} onClick={open}>
                 SUBMIT DONATION
           </Button>
+          <Modal>
+            <div className={styles.popupModal}>
+              <p>{modalPopupMsg}</p>
+              <button onClick={close} className={styles.closeButton}>
+                CLOSE
+             </button>
+            </div>
+          </Modal>
           </div>
       </form>
 

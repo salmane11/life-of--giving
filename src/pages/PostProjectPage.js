@@ -1,9 +1,9 @@
-import SplitScreenContainer from "../components/PostProject/SplitScreenContainer";
+import PostProjectForm from "../components/PostProject/PostProjectForm";
 
 const PostProjectPage = () => {
     return (
         <>
-        <SplitScreenContainer />
+        <PostProjectForm />
         </>
     )
 }
