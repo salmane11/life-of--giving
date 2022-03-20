@@ -14,7 +14,11 @@
 }
 .profile h1,h3{
     font-family: var(--normal-font);
-    color: var(--fourth-color)
+    color: var(--fourth-color);
+    font-size: 20px;
+}
+.profile h1{
+    font-size: 30px;
 }
 .profile button{
     border-radius: 5px;

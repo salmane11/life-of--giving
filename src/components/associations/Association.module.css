@@ -1,0 +1,35 @@
+.association{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    margin : 15px 5px;
+}
+.association:hover{
+    box-shadow: 2px 2px 3px 2px var(--second-color);
+    transition:500ms;
+}
+.association img{
+    width: 180px;
+    height:180px;
+    border: 1px solid var(--fourth-color);
+    border-radius: 10px;
+    padding: 2px 2px;
+    margin-right: 10px;
+}
+.informations{
+    display: flex;
+    flex-direction: column;
+    font-family: var(--normal-font);
+    color: var(--fourth-color);
+}
+.informations h2{
+    font-family: var(--titles-font);
+}
+.informations h4{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 15px;
+    margin: 0px 5px;
+}

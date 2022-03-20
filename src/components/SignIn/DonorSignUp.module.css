@@ -60,6 +60,11 @@
     border: 2px solid var(--fourth-color);
     color: var(--fourth-color);
   }
+  .inputs textarea {
+    border-radius: 5px;
+    border: 2px solid var(--fourth-color);
+    color: var(--fourth-color);
+  }
   .inputs input[type="file"] {
     display: none;
   }

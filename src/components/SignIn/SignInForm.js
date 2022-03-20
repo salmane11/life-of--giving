@@ -5,10 +5,25 @@ import PersonIcon from "@mui/icons-material/Person";
 import GroupIcon from "@mui/icons-material/Group";
 import { useContext, useState } from "react";
 import userContext from "../../store/userContext";
+import useHttp, { host } from "../../store/requests";
 
 function SignInForm() {
+  const userctx = useContext(userContext);
 
-  const userctx=useContext(userContext);
+  //use the existing custom hook for http requests
+  const { isLoading, error, sendRequest: signin } = useHttp();
+
+  const returnedDataHandler = (contextData) => {
+    console.log(contextData);
+    if (!error) {
+      userctx.login(
+        contextData.id,
+        contextData.email,
+        contextData.role,
+        contextData.token
+      );
+    }
+  };
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,20 +41,22 @@ function SignInForm() {
     //to prevent page refresh on every submit
     event.preventDefault();
 
-    //TODO
-    //email and password detection (admin, donor, organization)
-    if(email==="admin@gmail.com" && password==="123456789"){
-      userctx.login("admin","administrator");
-    }else if(email==="donor@gmail.com" && password==="123456789"){
-      userctx.login("donor","donor");
-    }else if(email==="organization@gmail.com" && password==="123456789"){
-      userctx.login("organization","organization");
-    }
-
-    console.log(userctx.loggedIn);
-    console.log(userctx.userRole);
-
-    console.log(email, password);
+    /**signin is the function that works on sending http requests
+     *  using a url and a method ,headers and a body if the method needs it
+     **/
+    signin(
+      {
+        url: host + "/signin",
+        method: "post",
+        headers: { "Content-Type": "Application/json" },
+        body: {
+          email,
+          password,
+        },
+      },
+      returnedDataHandler
+    );
+    //change email and password's value to null (initial value)
     setEmail("");
     setPassword("");
   };
@@ -67,6 +84,8 @@ function SignInForm() {
           />
         </div>
         <Button>Login</Button>
+        {isLoading && <p>Is Loading ...</p>}
+        {error && <p>{error}</p>}
       </form>
       <div className={styles.links}>
         <PersonIcon />

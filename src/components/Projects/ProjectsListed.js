@@ -24,7 +24,7 @@ function ProjectsListed() {
         {name: 'Winter is coming', image:project2, progression: 30, target: '5000$'},
         {name: 'Food for Homeless', image:project3, progression: 50, target: '6500$'},
         {name: 'Save ill dogs', image:project4, progression: 53, target: '400$'},
-        {name: 'Mosque construction', image:project5, progression: 12, target: '10000$'},
+        {name: 'Mosque construction2', image:project5, progression: 12, target: '10000$'},
         {name: 'Fight Hunger', image:project6, progression:23, target: '600$'},
         {name: 'Help Old People', image:project7, progression:73, target: '900$'},
         {name: 'Charity project', image:project8, progression:78, target: '1400$'},
@@ -35,7 +35,7 @@ function ProjectsListed() {
         <>
             <div className={styles.projectsContainer}>
                 { projects.map ( (project) => (
-                    <SingleProject name={project.name} src={project.image} progression={project.progression} target={project.target}/>
+                    <SingleProject key={project.name} name={project.name} src={project.image} progression={project.progression} target={project.target}/>
                 ) ) }
             </div>
             <Button className={styles.loadMoreBtn}>Load more... </Button>

@@ -1,0 +1,56 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--first-color);
+  margin-bottom: 20px;
+  padding: 30px 0;
+  border-radius: 20px;
+}
+.inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+.labels {
+  flex: 0.2;
+  text-align: center;
+  font-family: var(--normal-font);
+  color: var(--fourth-color);
+  font-size: 20px;
+}
+.inputs input {
+  flex: 0.7;
+  border-radius: 5px;
+  border: 2px solid var(--fourth-color);
+  color: var(--fourth-color);
+}
+.inputs input:focus {
+  outline: none;
+}
+.inputs input[type="file"] {
+  display: none;
+}
+.filelabel {
+  font-family: var(--normal-font);
+  font-size: 20px;
+  flex:0.7;
+  border-radius: 5px;
+  border: 2px solid var(--fourth-color);
+  color: var(--fourth-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  margin-left: 10%;
+  padding: 10px 0;
+}
+.buttons button {
+  flex: 0.45;
+  border-radius: 5px;
+}

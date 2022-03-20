@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "../ui/Button";
 import styles from "./DonorSignUp.module.css";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
+import useHttp, { host } from "../../store/requests";
 
 function DonorSignUp() {
   const [donorName, setDonorName] = useState("");
@@ -31,6 +32,7 @@ function DonorSignUp() {
   const donorImageHandler = (event) => {
     setDonorImage(event.target.files[0]);
   };
+  const { isLoading, error, sendRequest: signup } = useHttp();
 
   const submitHandler = (event) => {
     //to prevent page refresh on every submit
@@ -38,7 +40,19 @@ function DonorSignUp() {
 
     //TODO POST THESE DATA INTO THE BACKEND
 
-    console.log(donorName, donorImage, email, password, confirmedPassword);
+    console.log(donorImage);
+    signup({
+      url: host + "/signup/donors",
+      method: "post",
+      headers: { "Content-Type": "Application/json" },
+      body: {
+        name: donorName,
+        email,
+        password,
+      },
+    },
+    ()=>{});
+
     setDonorName("");
     setDonorImage(null);
     setEmail("");
@@ -102,6 +116,8 @@ function DonorSignUp() {
           />
         </div>
         <Button>SignUp</Button>
+        {isLoading && <p>isLoading ...</p>}
+        {error && <p>{error}</p>}
       </form>
       <Link className={styles.link} to="/sign-in">
         sign in

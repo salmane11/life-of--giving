@@ -7,11 +7,13 @@ function Joincontainer() {
       src: "/images/donor.jpg",
       title: "As A Donor",
       description: "you are their way to happiness ",
+      link:"donor-sign-up"
     },
     {
       src: "/images/organization.jpg",
       title: "As An Organization",
       description: "you are their way to happiness",
+      link:"organization-sign-up"
     },
   ];
   return (
@@ -24,6 +26,7 @@ function Joincontainer() {
             title={element.title}
             src={element.src}
             description={element.description}
+            link={element.link}
           />
         ))}
       </div>

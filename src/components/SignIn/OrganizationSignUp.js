@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import Button from "../ui/Button";
 import styles from "./DonorSignUp.module.css";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
+import useHttp, { host } from "../../store/requests";
 
 function OrganizationSignUp() {
   const [organizationName, setOrganizationName] = useState("");
   const [organizationLogo, setOrganizationLogo] = useState(null);
   const [organizationFile, setOrganizationFile] = useState(null);
+  const [organizationDescription, setOrganizationDescription] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmedPassword, setConfirmedPassword] = useState("");
@@ -36,17 +38,40 @@ function OrganizationSignUp() {
   const organizationFileHandler = (event) => {
     setOrganizationFile(event.target.files[0]);
   };
+  const organizationDescriptionHandler = (event) => {
+    setOrganizationDescription(event.target.value);
+  };
+
+  //use an existing customized hook to post informations to database
+  const { isLoading, error, sendRequest: signup } = useHttp();
 
   const submitHandler = (event) => {
     //to prevent page refresh on every submit
     event.preventDefault();
 
-    //TODO POST THESE DATA INTO THE BACKEND
+    console.log({
+      organizationFile,
+      organizationLogo,
+    });
+    signup(
+      {
+        url: host + "/signup/organisations",
+        method: "post",
+        headers: { "Content-Type": "Application/json" },
+        body: {
+          name: organizationName,
+          email,
+          password,
+          description: organizationDescription,
+        },
+      },
+      (data) => {console.log(data);}
+    );
 
-    console.log(organizationName, organizationFile,organizationLogo, email, password, confirmedPassword);
     setOrganizationName("");
     setOrganizationLogo(null);
     setOrganizationFile(null);
+    setOrganizationDescription("");
     setEmail("");
     setPassword("");
     setConfirmedPassword("");
@@ -94,6 +119,15 @@ function OrganizationSignUp() {
           />
         </div>
         <div className={styles.inputs}>
+          <label>Description</label>
+          <textarea
+            type="text"
+            placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            onChange={organizationDescriptionHandler}
+            value={organizationDescription}
+          />
+        </div>
+        <div className={styles.inputs}>
           <label>Email</label>
           <input
             type="email"
@@ -121,6 +155,8 @@ function OrganizationSignUp() {
           />
         </div>
         <Button>SignUp</Button>
+        {isLoading && <p>isLoading ...</p>}
+        {error && <p>{error}</p>}
       </form>
       <Link className={styles.link} to="/sign-in">
         sign in

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../ui/Button";
 import styles from './Join.module.css';
 
@@ -8,7 +9,7 @@ function Join(props){
             <div className={styles.joincontainer}>
                 <img src={props.src} alt={props.title}/>
                 <p>{props.description}</p>
-                <Button>Sign up</Button>
+                <Button><Link className={styles.link} to={`/${props.link}`}>Sign up</Link></Button>
             </div>
         </div>
     )

@@ -13,6 +13,9 @@ import DonationPage from "./pages/DonationPage";
 import { UserContextProvider } from "./store/userContext";
 import AdministratorDashboardPage from "./pages/AdministratorDashboardPage";
 import RequestsPage from "./pages/RequestsPage";
+import RequestDetails from "./components/Admin requests/RequestsDetails/RequestDetails";
+import NewAdminPage from "./pages/NewAdminPage";
+import AssociationPage from "./pages/AssociationsPage";
 
 
 
@@ -29,10 +32,12 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/project-description" element={<ProjectDescription className="element"/>} />
         <Route path='/donation' element={<DonationPage className="element"/>} />
-        <Route path="/associations" element={<h1 className="element">this is associations page</h1>} />
+        <Route path="/associations" element={<AssociationPage/>} />
         <Route path="/donors" element={<h1 className="element">this is donors page</h1>} />
         <Route path="/administrator-dashboard" element={<AdministratorDashboardPage />} />
         <Route path="/requests" element={<RequestsPage />} />
+        <Route path="/requests/:associationId" element={<RequestDetails/>} />
+        <Route path="/new-administrator" element={<NewAdminPage/>} />
         <Route path="/donor-profile" element={<h1 className="element">this is the donor-profile</h1>} />
         <Route path="/organization-profile" element={<h1 className="element">this is the organization-profile</h1>} />
         <Route path="/sign-in" element={<SignInPage className="element"/>} />

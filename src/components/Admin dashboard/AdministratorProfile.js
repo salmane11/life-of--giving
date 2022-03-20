@@ -12,7 +12,7 @@ function AdministratorProfile() {
         <Link to="/dashboard" className={styles.link}>Dashboard</Link>
       </Button>
       <Button>
-        <Link to="/administrators" className={styles.link}>add administrator</Link>
+        <Link to="/new-administrator" className={styles.link}>add administrator</Link>
       </Button>
       <Button>
         <Link to="/requests" className={styles.link}>show requests</Link>
