@@ -13,7 +13,7 @@ const SingleProject = ( {name, src, progression, target} ) => {
                         completed={progression} 
                         bgColor={'#ffc900'}
                         baseBgColor = {'#fff89a'}
-                        width = {350}
+                        width = {'350px'}
                         height = {'auto'}
                         className= {styles.wrapper}
                     />
