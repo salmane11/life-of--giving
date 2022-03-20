@@ -23,12 +23,11 @@
 .profile button{
     border-radius: 5px;
     width : 80%;
-    height:25px;
     margin-bottom: 10px;
 }
-.link{
+.mylink{
     text-decoration: none;
     font-family: var(--normal-font);
     color: var(--fourth-color);
-    font-size: 15px;
+    margin-top: 0;
 }

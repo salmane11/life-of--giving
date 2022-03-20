@@ -19,6 +19,9 @@
     outline: none;
 }
 .searchbar button{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     width: 15%;
     height:27px;
     border-radius: 5px;

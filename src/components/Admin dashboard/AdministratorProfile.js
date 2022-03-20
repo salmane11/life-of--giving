@@ -9,13 +9,13 @@ function AdministratorProfile() {
       <h1>Mohammed Lasfar</h1>
       <h3>Administrator</h3>
       <Button>
-        <Link to="/dashboard" className={styles.link}>Dashboard</Link>
+        <Link to="/administrator-dashboard" className={styles.mylink}>Dashboard</Link>
       </Button>
       <Button>
-        <Link to="/new-administrator" className={styles.link}>add administrator</Link>
+        <Link to="/new-administrator" className={styles.mylink}>add administrator</Link>
       </Button>
       <Button>
-        <Link to="/requests" className={styles.link}>show requests</Link>
+        <Link to="/requests" className={styles.mylink}>show requests</Link>
       </Button>
     </div>
   );
