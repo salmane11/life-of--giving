@@ -35,7 +35,6 @@
 @media (max-width: 800px){
     .projectImage{
         width: 290px;
-        /* height: 150px; */
         transition: 0.5s;
     }
     .projectContainer{

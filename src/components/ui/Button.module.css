@@ -8,6 +8,4 @@
     border: 1px solid var(--fourth-color);
     background-color: var(--first-color);
     color: var(--third-color);
-    transition: 0.3s;
-    cursor: pointer;
 }

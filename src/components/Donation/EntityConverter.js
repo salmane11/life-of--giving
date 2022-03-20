@@ -9,10 +9,10 @@ const EntityConverter = ({entity, entityPrice, target}) => {
     const [helpedEntitiesNumber, setHelpedEntitiesNumber] = useState(0);
 
     function handleChange(event){
-        console.log(event.target.value);
+        // console.log(event.target.value);
         let givenDonation = event.target.value;
         // helpedEntitiesNumber = Math.trunc(givenDonation/entityPrice);
-        console.log(helpedEntitiesNumber);
+        // console.log(helpedEntitiesNumber);
         setHelpedEntitiesNumber(  Math.trunc(givenDonation/entityPrice) );
     }
 
