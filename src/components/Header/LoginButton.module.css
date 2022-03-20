@@ -10,8 +10,9 @@
     font-size: 20px;
     color :white;
     border-radius: 15px 15px 15px 0px;
-    padding : 5px 15px;
+    padding : 3px 15px;
 }
 .loginlink:hover{
-    padding : 7px 20px;
+    padding : 5px 20px;
+    color: white;
 }

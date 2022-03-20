@@ -12,6 +12,9 @@ import ProjectDescription from "./pages/ProjectDescription";
 import DonationPage from "./pages/DonationPage";
 import { UserContextProvider } from "./store/userContext";
 import PostProjectPage from "./pages/PostProjectPage";
+import AdministratorDashboardPage from "./pages/AdministratorDashboardPage";
+import RequestsPage from "./pages/RequestsPage";
+
 
 
 
@@ -31,7 +34,8 @@ function App() {
         <Route path='/post-project' element={<PostProjectPage  className="element"/>}></Route>
         <Route path="/associations" element={<h1 className="element">this is associations page</h1>} />
         <Route path="/donors" element={<h1 className="element">this is donors page</h1>} />
-        <Route path="/dashboard" element={<h1 className="element">this is the dashboard</h1>} />
+        <Route path="/administrator-dashboard" element={<AdministratorDashboardPage />} />
+        <Route path="/requests" element={<RequestsPage />} />
         <Route path="/donor-profile" element={<h1 className="element">this is the donor-profile</h1>} />
         <Route path="/organization-profile" element={<h1 className="element">this is the organization-profile</h1>} />
         <Route path="/sign-in" element={<SignInPage className="element"/>} />

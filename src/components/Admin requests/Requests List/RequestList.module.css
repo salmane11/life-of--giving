@@ -1,0 +1,12 @@
+.requestslist{
+    display:flex;
+    flex-direction: column;
+    background-color: var(--first-color);
+    padding: 20px 0px;
+    margin-bottom: 20px;
+}
+.title{
+    text-align: center;
+    font-family: var(--titles-font);
+    color: var(--fourth-color);
+}
