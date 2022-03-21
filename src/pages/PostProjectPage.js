@@ -1,9 +1,9 @@
-import PostProjectForm from "../components/PostProject/PostProjectForm";
+import PostProjectContainer from "../components/PostProject/PostProjectContainer";
 
 const PostProjectPage = () => {
     return (
         <>
-        <PostProjectForm />
+        <PostProjectContainer />
         </>
     )
 }

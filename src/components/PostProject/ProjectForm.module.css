@@ -1,0 +1,117 @@
+.attributeSection{
+    font-family: var(--normal-font);
+    /* background-color: aqua; */
+    color: var(--third-color);
+    margin-left: 50px;
+    width: 100%;
+}
+
+.titles{
+    padding: 0.3em 1.5em;
+    width: 30%;
+    border: 1px solid var(--second-color);
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #ffffff;
+    transition: all .3s;
+    font-family: var(--normal-font);
+    color: var(--third-color);
+    margin-top: 5px;
+}
+
+.titles:hover{
+    border: 1px solid var(--second-color);
+    transition: 0.2s;
+}
+
+.attributesForm{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    flex: 1 1 auto;
+    padding: 10px;
+    width: 100%;
+}
+.formInput{
+    border-radius: 20px;
+    padding: 15px;
+    height: 50px;
+    width: 90%;
+    border: 0.5px groove rgba(128, 128, 128, 0.363);
+}
+.formInput:focus{
+    opacity: 0.9;
+    border: 0.5px groove rgba(255, 255, 255, 0.363);
+}
+input[type=file] {
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px;
+}
+
+.radioButtons{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    align-items: center;
+    column-gap: 40px;
+}
+
+.radioBtnItem{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 40px;
+}
+#cancelBtn{
+    background-color: white;
+    padding: 0.3em 1.5em;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-radius: 0.5em;
+    border: 1px solid var(--first-color);
+    transition: all .3s;
+    font-family: var(--normal-font);
+    color: var(--third-color);
+    margin-top: 5px;
+}
+
+#submitBtn{
+    background-color: var(--second-color);
+    padding: 0.3em 1.5em;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-radius: 0.5em;
+    border: 1px solid var(--first-color);
+    transition: all .3s;
+    font-family: var(--normal-font);
+    color: var(--third-color);
+    margin-top: 5px;
+}
+#submitBtn:hover{
+    opacity: 0.8;
+}
+
+/********* Text Editor styles **************/
+.textAreaContainer{
+    margin-left: 0px;
+    border: 1px groove rgba(128, 128, 128, 0.137);
+    border-radius: 20px;
+    width: 90%;
+    padding: 15px;
+}
+.textAreaContainer:focus { 
+    outline: none !important;
+    border-color: var(--second-color);
+    box-shadow: 0 0 9px var(--second-color);
+ }
