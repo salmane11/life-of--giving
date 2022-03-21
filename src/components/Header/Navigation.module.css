@@ -1,0 +1,28 @@
+.navigation{
+    flex:0.6;
+    font-family: var(--normal-font);
+    font-size: 20px;
+}
+.navigation ul{
+    display:flex;
+    justify-content: center;
+    list-style-type: none;
+    flex-wrap: wrap;
+}
+.link{
+    color :var(--fourth-color);
+    text-decoration: none;
+    margin-right : 20px;
+}
+.link:hover{
+    text-decoration: underline;
+    text-decoration-color: var(--second-color);
+    text-decoration-thickness: 4px;
+}
+.activelink{
+    color :var(--fourth-color);
+    margin-right : 20px;
+    text-decoration: underline;
+    text-decoration-color: var(--second-color);
+    text-decoration-thickness: 4px;
+}

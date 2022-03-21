@@ -1,0 +1,5 @@
+.mybutton{
+    background-color: var(--second-color);
+    color: var(--fourth-color);
+    font-family: var(--normal-font);
+}

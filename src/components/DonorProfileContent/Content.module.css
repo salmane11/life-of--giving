@@ -1,0 +1,21 @@
+.container{
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+.item3{
+    align-items: center;
+}
+@media (max-width:400px){
+    /* .container{
+        display:flex;
+        align-content: flex-start;
+        flex-direction:row-reverse;
+        flex-wrap: wrap;
+
+    } */
+    
+
+}

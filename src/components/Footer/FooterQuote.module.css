@@ -1,0 +1,7 @@
+.quote{
+    flex:0.4;
+    display:flex;
+    font-family: var(--normal-font);
+    font-weight: bold;
+    color:var(--fourth-color);
+}

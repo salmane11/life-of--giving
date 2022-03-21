@@ -1,0 +1,19 @@
+.socialnetworks{
+    flex : 0.3;
+    display:flex;
+    flex-direction: column;
+}
+
+.socialnetworks span{
+    display:flex;
+    align-items: center;
+    color :var(--fourth-color);
+    font-family: var(--normal-font);
+    margin-bottom: 7px;
+    margin-left: 50px;
+}
+.title{
+    font-family: var(--titles-font);
+    color :var(--fourth-color);
+    margin-left: 20px;
+}

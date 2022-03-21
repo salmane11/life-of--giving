@@ -1,0 +1,7 @@
+.sponsor {
+  display: flex;
+  align-items: center;
+  font-family: var(--titles-font);
+  color:var(--fourth-color);
+  margin-left: 10px;
+}

@@ -1,0 +1,54 @@
+.content{
+    display: flex;border-radius: 15px;
+    align-content:center;
+    justify-content: center;
+    flex-direction: column;
+    width: 33%;
+    height: 200px;
+    padding-bottom: 10%;
+    border-radius: 15px;
+    align-content:center;
+    justify-content: center;
+    background-color: var(--first-color);
+    margin-bottom: 20px;
+    margin-left: 2%;
+   
+  }
+  .morepages {
+    font-family: var(--titles-font);
+    font-size:2em;
+    margin-left: 35%;
+    margin-top: 28%;
+    color: var(--fourth-color);
+    
+
+  }
+  .button{
+    width: 70%;
+    height: 1px;
+    border-radius: 7px;
+    background-color: var(--first-color);
+    border-color: var(--fourth-color);
+    border-style: groove;
+    border-width:1px ;
+    padding : 20px 0px;
+    transform: scale(.9);
+    transition: all .3s ease-in-out;
+    margin-left: 70px; 
+   }
+.button:hover{
+    background-color: var(--second-color);
+    transform: scale(1);
+}
+.choices{
+       color: var(--fourth-color);
+       font-family: var(--normal-font);
+       font-size: large;
+       margin-top: -5%;
+       margin-left: 9px;
+   }
+@media(max-width:400px){
+  .content{
+    
+  }
+}

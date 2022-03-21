@@ -1,0 +1,7 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+.element{
+  min-height: 50vh;
+}

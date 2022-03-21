@@ -1,0 +1,38 @@
+.join{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--titles-font);
+    font-size: 20px;
+    color:var(--fourth-color);
+    margin-bottom: 20px;
+}
+
+.joincontainer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid var(--fourth-color);
+    border-radius: 10px;
+    font-family: var(--normal-font);
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
+}
+.joincontainer img{
+    width : 90px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.joincontainer button{
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 40%;
+    font-weight: bold;
+    font-size: 20px;
+}
+.joincontainer p{
+    text-align: center;
+    font-family: var(--titles-font);
+    width: 80%;
+    font-weight: bold;
+    font-size: 30px;
+}

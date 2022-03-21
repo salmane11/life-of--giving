@@ -1,0 +1,17 @@
+.loginbutton{
+    flex:0.2;
+    display:flex;
+    justify-content: center;
+}
+.loginlink{
+    background-color: var(--fourth-color);
+    font-family: var(--normal-font);
+    text-decoration: none;
+    font-size: 20px;
+    color :white;
+    border-radius: 15px 15px 15px 0px;
+    padding : 5px 15px;
+}
+.loginlink:hover{
+    padding : 7px 20px;
+}

@@ -1,0 +1,72 @@
+.cardChart{
+  position: relative;
+    width: 60%;
+    height: 72%;
+    border-radius: 15px;
+    align-content:center;
+    position: absolute;
+    justify-content: center;
+    background-color: var(--first-color);
+    margin-left: 37%;
+    margin-top: 30px;
+  }
+  .title{
+    font-family: var(--titles-font);
+    font-size:2.5em;
+    color: var(--fourth-color);
+    margin-left: 16%;
+    margin-top: 2%;
+
+  }
+  .info{
+    color :var(--fourth-color);
+    font-family: var(--normal-font);
+    margin-left: 1%;
+    margin-top: -1%;
+
+
+  }
+  .result{
+    color :var(--third-color);
+    font-family: var(--normal-font);
+    font-weight: bold;
+    font-size: larger;
+    margin-left: 30%;
+
+  }
+  .moreStatistics{
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 0%;
+    border: 0px groove var(--fourth-color);
+    border-radius: 5px;
+    font-family: var(--normal-font);
+    color: var(--fourth-color);
+    font-size: large;
+
+  }
+  @media (max-width:400){
+    .cardChart{
+      width: 60%;
+      height: 70%;
+      border-radius: 15px;
+      align-content:center;
+      justify-content: center;
+      background-color: var(--first-color);
+      margin-left: 37%;
+      margin-top: 30px;
+    }
+  }
+  @media (max-width:800){
+    .cardChart{
+      width: 50%;
+      height: 70%;
+      border-radius: 15px;
+      align-content:center;
+      justify-content: center;
+      background-color: var(--first-color);
+      margin-left: 37%;
+      margin-top: 30px;
+    }
+  }
+  
