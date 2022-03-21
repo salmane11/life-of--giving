@@ -20,7 +20,7 @@
 
 input {
   border-radius: 5px;
-  border: 2px groove grey;
+  border: 2px groove gray;
   width: 400px;
   height: 40px;
 }
@@ -34,7 +34,7 @@ input {
   margin-bottom: 40px;
 }
 .labels{
-  width: 450px;
+  width: 750px;
   font-family: var(--normal-font);
   color: var(--third-color);
   font-size: 20px;

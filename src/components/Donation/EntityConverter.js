@@ -9,20 +9,17 @@ const EntityConverter = ({entity, entityPrice, target}) => {
     const [helpedEntitiesNumber, setHelpedEntitiesNumber] = useState(0);
 
     function handleChange(event){
-        // console.log(event.target.value);
         let givenDonation = event.target.value;
-        // helpedEntitiesNumber = Math.trunc(givenDonation/entityPrice);
-        // console.log(helpedEntitiesNumber);
         setHelpedEntitiesNumber(  Math.trunc(givenDonation/entityPrice) );
     }
 
     return (
         <div>
-            <div className={styles.converter}>
+            <form className={styles.converter}>
                 <label htmlFor="donatedMoney" id={styles.label}>Money:  </label>
                 <input id={styles.donatedMoney} type="text" onChange={handleChange}/>
                 <label id={styles.label}> {helpedEntitiesNumber} {entity}, from the total of {totalEntities}.</label>
-            </div>
+            </form>
             <p>For each {entity} we need ${entityPrice}</p>
         </div>
     )

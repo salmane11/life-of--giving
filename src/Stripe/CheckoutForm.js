@@ -1,9 +1,10 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import {  useStripe, useElements, CardCvcElement, CardNumberElement, CardExpiryElement } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { Button } from "@material-ui/core";
 import styles from './CheckoutForm.module.css'
 import { useModal } from 'react-hooks-use-modal';
+import useHttp, {host} from "../store/requests";
 
 const CARD_OPTIONS = {
 	style: {
@@ -20,15 +21,36 @@ export const CheckoutForm = () => {
   const elements = useElements();
   const [error, setError] = useState('');
   const [modalPopupMsg, setModalPopupMsg] = useState('Please make sure you filled all the fields ');
+  const [donatedMoney, setDonatedMoney] = useState('');
+  const { isLoading,sendRequest: donate} = useHttp();
+
+  const donatedMoneyHandler = (event) => {
+    setDonatedMoney(event.target.value);
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    donate( {
+      url: host + '/donation',
+      method: "post",
+      headers: { "Content-Type": "Application/json" },
+      body: {
+        amount: donatedMoney,
+      },
+    },
+    (data)=>{console.log(data)});
+
+    setDonatedMoney("");
+
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardNumberElement),
       card: elements.getElement(CardExpiryElement),
       card: elements.getElement(CardCvcElement),
     });
+
+    console.log(error);
 
     if (!error) {
       console.log("Stripe 23 | token generated!", paymentMethod);
@@ -60,7 +82,7 @@ export const CheckoutForm = () => {
   };
   
   /*********Modal popup after submit ******/
-  const  [Modal, open, close, isOpen] = useModal('root', {
+  const  [Modal, open, close] = useModal('root', {
     preventScroll: true,
     closeOnOverlayClick: false
   });
@@ -110,11 +132,28 @@ export const CheckoutForm = () => {
                <CardCvcElement className={styles.cardinfos} options={CARD_OPTIONS}/>
             </td>
           </tr>
+          <tr>
+            <td className={styles.labels}>
+                Money Donated Amount
+            </td>
+            <td>
+              <input type="number" 
+              value={donatedMoney}
+              onChange={donatedMoneyHandler}
+              placeholder="100$" 
+              name="donatedMoney"  
+              required></input> <br/>
+            </td>
+            <td>
+
+            </td>
+          </tr>
       </table>
           <div id={styles.btnContainer}>
           <Button type="submit" variant="contained" disabled={!stripe} id={styles.submitBtn} onClick={open}>
                 SUBMIT DONATION
           </Button>
+          {isLoading && <p>isLoading ...</p>}
           <Modal>
             <div className={styles.popupModal}>
               <p>{modalPopupMsg}</p>
