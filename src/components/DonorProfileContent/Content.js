@@ -67,102 +67,135 @@ function Content() {
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'1',
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'2',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'3',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'4',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'5',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'6',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'7',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'8',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'9',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'10',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'11',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'12',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'13',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'14',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'15',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'16',
+
         },
         {
             association_name: 'Yusr Foundation',
             title: 'Dif2on',
             donation_amount: '20$',
             donation_date:'17 - 02 - 2022',
+            key:'17',
+
         },
 
 
