@@ -1,0 +1,170 @@
+.card {
+  position: relative;
+  width: 33%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--first-color);
+  margin-bottom: 90px;
+  margin-top: 30px;
+  margin-left: 2%;
+}
+.wrapper {
+  height: 300px;
+  width: 300px;
+  position: relative;
+  border: 5x solid;
+  margin-left: 14%;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper label {
+  font-weight: bolder;
+  font-family: var(--normal-font);
+  color: var(--second-color);
+  font-size: large;
+  margin-top: -50px;
+  margin-left: 50px;
+}
+.my_file {
+  position: absolute;
+  bottom: 0;
+  outline: none;
+  font-weight: bolder;
+  font-family: var(--normal-font);
+  color: var(--second-color);
+  font-size: large;
+  color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 82px;
+  margin-left: -60px;
+  cursor: pointer;
+  transition: 0.5s;
+  display: none;
+}
+
+/* .my_file::before{
+      position: absolute;
+      content: 'Edit Picture';
+      font-weight: bolder;
+      font-family: var(--normal-font);
+      color: var(--second-color);
+      font-size: 25px;
+      margin-left: 53%;
+  } */
+.line {
+  position: absolute;
+  size: 5px;
+  width: 69%;
+  margin-left: 55px;
+  margin-top: 90px;
+}
+.description {
+  /* position: relative; */
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--fourth-color);
+  margin-top: -220px;
+  margin-left: 7%;
+}
+.description h1 {
+  font-family: var(--titles-font);
+  font-size: 2.5em;
+  margin-top: 32%;
+  margin-left: -8%;
+}
+
+.mediumText {
+  font-family: var(--normal-font);
+  font-size: 1.1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -6%;
+  margin-top: -3%;
+}
+.description span {
+  display: flex;
+  align-items: center;
+  color: var(--fourth-color);
+  font-family: var(--normal-font);
+  justify-content: space-between;
+}
+.score {
+  display: flex;
+  flex: 0.1;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -1%;
+  margin-bottom: 7%;
+  margin-left: -4%;
+  font-size: larger;
+  font-family: var(--normal-font);
+  font-weight: bold;
+}
+.scoreIcon {
+  color: var(--second-color);
+  margin-top: -16%;
+}
+
+.card img {
+  display: flex;
+  border-radius: 50%;
+  width: 230px;
+  height: 200px;
+  box-shadow: 2px 2px 20px 2px var(--second-color);
+  margin-top: -1%;
+  margin-left: 15%;
+}
+.more_pages {
+  position: relative;
+  background-color: var(--fourth-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 60%;
+  height: 200px;
+  margin-top: 5px;
+  margin-left: 89px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  align-content: center;
+  justify-content: center;
+}
+.button {
+  width: 70%;
+  height: 1px;
+  border-radius: 7px;
+  background-color: var(--first-color);
+  border-color: var(--fourth-color);
+  padding: 20px 0px;
+  transform: scale(0.9);
+  transition: all 0.3s ease-in-out;
+  margin-left: 41px;
+}
+.button:hover {
+  background-color: var(--second-color);
+  transform: scale(1);
+}
+.selected_button {
+  width: 63%;
+  height: 5%;
+  border-radius: 7px;
+  padding: 18px 0px;
+  margin-left: 49px;
+  border-color: var(--fourth-color);
+}
+.choices {
+  color: var(--fourth-color);
+  font-family: var(--normal-font);
+  font-size: large;
+  margin-top: -7%;
+  margin-left: 3px;
+}

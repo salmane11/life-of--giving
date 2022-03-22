@@ -1,0 +1,217 @@
+.card{
+  position: relative;
+    width: 33%;
+    border-radius: 15px;
+    align-content:center;
+    display: flex;
+    justify-content: center;
+    background-color: var(--first-color);
+    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-left: 2%;
+    
+   
+  }
+  .description {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--fourth-color);
+    margin: 150px 0px 0px -60%;
+  }
+  .description h1 {
+    font-family: var(--titles-font);
+    font-size:2.5em;
+    margin-top: 30%;
+    margin-left: -8%;
+
+  }
+
+  .mediumText{
+    font-family: var(--normal-font);
+    font-size: 1.1em;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -6%;
+    margin-top: -5%;
+   
+  }
+  .description span  {
+    display:flex;
+    align-items: center;
+    color :var(--fourth-color);
+    font-family: var(--normal-font);
+    justify-content: space-between;
+    margin-top: -1%;
+
+  
+  }
+.score{
+  display: flex;
+  flex: 0.1;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1%;
+  margin-bottom: 7%;
+  margin-left: -7%;
+  font-size: larger;
+  font-family: var(--normal-font);
+  font-weight: bold;
+
+
+}
+.scoreIcon{
+  color: var(--second-color);
+  margin-top: -16%;
+
+}
+
+
+  .card img {
+    display: flex;
+    border-radius: 50%;
+    width: 230px;
+    height: 200px;
+    box-shadow: 2px 2px 20px 2px var(--second-color);
+    margin-top: 10%;
+    margin-left: 15%;
+
+  }
+ 
+  .button{
+        width: 160%;
+        height: 20px;
+        border-radius: 15px;
+        border: 1px groove var(--fourth-color);
+        padding : 20px 0px;
+        margin-bottom: 50px;
+        font-size: 20px;
+        margin-top: 10%;
+        margin-left: -50%;
+       
+  }
+  .buttonText{
+    text-align: center;
+    margin-top: -15px;
+
+}
+
+.socialIcon{
+  margin-top: -20%;
+}
+.socialNetwork{
+  margin-top: 20%;
+  margin-left: -9%;
+  align-items:center
+  
+
+}
+@media only screen and (min-width:100px)and (max-width:400px){
+  
+  .card{
+    width: 90%;
+    height: 600px;
+    border-radius: 10px;
+    margin-left: 5%;
+
+  }
+  .description {
+    flex: 0.4;
+    margin: 180px 0px 0px -40%;
+  }
+  .description h1 {
+    font-size:1.5em;
+    margin-top: 30%;
+    margin-left: -8%;
+
+  }
+  .mediumText{
+    font-size: 12px;
+    margin-left: -6%;
+    margin-top: -7%;
+  }
+  .score{
+    flex: 0.1;
+    margin-top: -1%;
+    margin-left: -7%;    
+    font-size: small;
+  }
+  .card img {
+    border-radius: 50%;
+    width: 150px;
+    height: 120px;
+    margin-left: -5%;
+    margin-bottom: 0%;
+
+  }
+ 
+  .button{
+    padding-bottom: 5%;
+    width: 30%;
+    font-size: 10px;
+    margin-top: 10%;
+    margin-left: -11%;
+       
+  }
+  .buttonText{
+  text-align: center;
+  margin-top: -14px;
+
+}
+
+}
+@media only screen and ( min-width:401)and (max-width:800px){
+  
+  .card{
+    width: 80%;
+    height: 680px;
+    border-radius: 10px;
+    margin-left: 5%;
+
+  }
+  .description {
+    flex: 0.6;
+    margin: 200px 0px 0px -47%;
+  }
+  .description h1 {
+    font-size:2em;
+    margin-top: 1%;
+    margin-left: -8%;
+
+  }
+  .mediumText{
+    font-size: 16px;
+    margin-left: -6%;
+    margin-top: -7%;
+  }
+  .score{
+    flex: 0.2;
+    margin-top: -1%;
+    margin-left: -7%;    
+    font-size: medium;
+  }
+  .card img {
+    width: 170px;
+    height: 140px;
+    margin-left: 13%;
+
+  }
+ 
+  .button{
+    padding-bottom: 10%;
+    width: 30%;
+    font-size: 15px;
+    margin-top: 10%;
+    margin-left: -11%;
+       
+  }
+  .buttonText{
+  text-align: center;
+  margin-top: -10px;
+
+}
+
+}

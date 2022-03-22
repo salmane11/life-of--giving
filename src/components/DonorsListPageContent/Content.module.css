@@ -1,0 +1,239 @@
+.quote {
+    font-family: var(--titles-font);
+    color: var(--fourth-color);
+    padding-left: 10%;
+    text-decoration:underline;
+    text-decoration-color: var(--second-color);
+    text-decoration-style:solid ;
+  }
+  .main_content{
+    display: flex;
+    width: 72%;
+    height: 150%;
+    margin: 0px auto;
+    padding: 10px 7px 0;
+    box-sizing: border-box;
+    justify-content: center;
+    flex-wrap:wrap;
+    flex-direction: row;
+
+
+}
+.card{
+    width: 30%;
+    height: 300px;
+    --padding:0.2rem;
+    padding: var(--padding);
+    border-radius: 15px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    transform: scale(.9);
+    transition: all 500ms ease-in-out;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    
+  }
+  .card:hover{
+      background-color: var(--first-color);
+      transform: scale(1.1);
+  }
+  .description {
+    position: absolute;
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--fourth-color);
+    margin: 160px 0px 0px -5%;
+  }
+ 
+  .description h1 {
+    font-family: var(--titles-font);
+    font-size:x-large;
+    position: absolute;
+    width: max-content;
+  }
+  .description h1::after{
+    content: "";
+    position: absolute;
+    height: 4px;
+    left: calc(var(--padding)* -1);
+    bottom: 0%;
+    width: calc(100% + var(--padding));
+    background: var(--second-color);
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform 500ms ease;
+  }
+  .card:hover .description h1::after{
+    transform: scaleX(1);
+  }
+  .description span  {
+    display:flex;
+    align-items: center;
+    color :var(--fourth-color);
+    font-family: var(--normal-font);
+    margin: -8%;
+
+}
+  .card img {
+    position: absolute;
+    border-radius: 10px;
+    width: 190px;
+    height: 160px;
+  }
+  .socialNet{
+   position: absolute;
+   align-content: center;
+   transform: translateY(700%);
+   transition: transform 500ms ease;
+
+  
+
+  }
+  .socialNet>span{
+    font-size: 11px;
+  }
+  .socialIcon{
+    color:var(--fourth-color);
+    width: 0px;
+    
+  }
+  .card:hover .socialNet{
+    transform:translateY(70%) ;
+  }
+   .score{
+    position: absolute;
+    color: var(--fourth-color);
+    text-align: center;
+    background-color:var(--second-color) ;
+    border-radius: 100%;
+    width: 30px;
+    height: 25px;
+    margin-left:60% ;
+    margin-top: -1%;
+  }
+   .button{
+    width: 15%;
+    height: 20px;
+    border-radius: 10px;
+    padding : 20px 0px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 580px; 
+    font-size: 20px;
+    cursor: pointer;
+   }
+   .button:hover{
+     background-color: var(--first-color);
+     color:var(--second-color) ;
+   }
+   .buttonText{
+    text-align: center;
+    margin-top: -10px;
+
+}
+@media (max-width: 400px){
+  .quote{
+    font-size: large;
+  }
+  .main_content{
+    width: 90%;
+  }
+  .card{
+    height: 190px;
+    width: 45%;
+  }
+  .card img{
+    width: 170px;
+    height: 90px;
+    align-content: space-around;
+  }
+  .description{
+    margin-top: 80px;
+    flex: 0.5;
+
+  }
+  .description h1{
+    font-size: medium;
+    margin-bottom: 1px;
+  }
+  .description h1::after{
+    height: 2px;
+  }
+  .socialNet>span{
+    font-size: 9px;
+    margin-top: -15px;
+  }
+  .card:hover .socialNet{
+    transform:translateY(115%) ;
+  }
+  .score{
+    width: 15px;
+    height: 15px;
+    margin-left: 110px;
+    font-size: small;
+  }
+  .button{
+    width: 20%;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    margin-left: 160px; 
+    font-size: 15px
+}
+}
+@media (max-width: 800px){
+  .quote{
+    font-size: larger;
+  }
+  .main_content{
+    width: 70%;
+  }
+  .card{
+    height: 160px;
+    width: 48%;
+  }
+  .card img{
+    width: 140px;
+    height: 100px;
+    align-content: space-around;
+  }
+  .description{
+    margin-top: 90px;
+  }
+  .description h1{
+    font-size: medium;
+    margin-bottom: 1px;
+  }
+  .description h1::after{
+    height: 2px;
+  }
+  
+  .socialNet>span{
+    font-size: 9px;
+    margin-top: -15px;
+  }
+  .card:hover .socialNet{
+    transform:translateY(115%) ;
+  }
+  .score{
+    width: 15px;
+    height: 15px;
+    margin-left: 140px;
+    font-size: small;
+  }
+  .button{
+    width: 20%;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    margin-left: 270px; 
+    font-size: 15px
+}
+}
+  
+  
+  
+  

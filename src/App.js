@@ -18,7 +18,11 @@ import RequestDetails from "./components/Admin requests/RequestsDetails/RequestD
 import NewAdminPage from "./pages/NewAdminPage";
 import AssociationPage from "./pages/AssociationsPage";
 import AssociationProfileUpdatePage from "./pages/AssociationProfileUpdatePage";
-
+import DonorsListPage from "./pages/DonorsListPage";
+import DonorProfile from "./pages/DonorProfile";
+import DonorEditProfile from "./pages/DonorEditProfile";
+import DonorProfileChangePassword from "./pages/DonorProfileChangePassword";
+import DonorProfileDonationHistory from "./pages/DonorProfileDonationHistory";
 
 
 
@@ -38,12 +42,15 @@ function App() {
         <Route path='/post-project' element={<PostProjectPage  className="element"/>}></Route>
         <Route path="/associations" element={<AssociationPage/>} />
         <Route path="/organization-profile" element={<AssociationProfileUpdatePage/>} />
-        <Route path="/donors" element={<h1 className="element">this is donors page</h1>} />
+        <Route path="/donors"exact element={<DonorsListPage className="element"/>}  />
+        <Route path="/donor-profile"exact element={<DonorProfile className="element"/>}  />
+        <Route path="/donor-profile/settings"  exact element={<DonorEditProfile className="element"/>}  />
+        <Route path="/donor-profile/change-password"  exact element={<DonorProfileChangePassword className="element"/>}  />
+        <Route path="/donor-profile/donation-history"exact element={<DonorProfileDonationHistory className="element"/>}  />
         <Route path="/administrator-dashboard" element={<AdministratorDashboardPage />} />
         <Route path="/requests" element={<RequestsPage />} />
         <Route path="/requests/:associationId" element={<RequestDetails/>} />
         <Route path="/new-administrator" element={<NewAdminPage/>} />
-        <Route path="/donor-profile" element={<h1 className="element">this is the donor-profile</h1>} />
         <Route path="/sign-in" element={<SignInPage className="element"/>} />
         <Route path="/donor-sign-up" element={<DonorSignUpPage className="element"/>} />
         <Route path="/organization-sign-up" element={<OrganizationSignUpPage className="element"/>} />
