@@ -31,15 +31,15 @@ export const CheckoutForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    donate( {
-      url: host + '/donation',
-      method: "post",
-      headers: { "Content-Type": "Application/json" },
-      body: {
-        amount: donatedMoney,
-      },
-    },
-    (data)=>{console.log(data)});
+    // donate( {
+    //   url: host + '/donation',
+    //   method: "post",
+    //   headers: { "Content-Type": "Application/json" },
+    //   body: {
+    //     amount: donatedMoney,
+    //   },
+    // },
+    // (data)=>{console.log(data)});
 
     setDonatedMoney("");
 
@@ -58,8 +58,8 @@ export const CheckoutForm = () => {
       try{
         const { id } = paymentMethod;
         const response = await axios.post(
-            "http://localhost:7000/stripe/charge", {
-                amount: 999,
+            "http://localhost:8082/payment", {
+                amount: (donatedMoney*100),
                 id: id,
             }
         );
