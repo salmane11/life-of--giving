@@ -90,7 +90,7 @@ export const CheckoutForm = () => {
 
   return (
     <>
-        <form onSubmit={handleSubmit} className={styles.donationForm}>
+        <form onSubmit={handleSubmit} id={styles.donationForm}>
           <table className={styles.formTable}>
           <tr>
             <td className={styles.labels}>

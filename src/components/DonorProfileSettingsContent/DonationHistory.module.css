@@ -8,8 +8,6 @@
     margin-left: 38%;
     background-color: var(--first-color);
     border-radius: 15px;
-
-    
 }
 .wrapper{
     position: absolute;
@@ -59,8 +57,6 @@
     color: var(--third-color);
     margin-top: -15px;
     margin-left: 13px;
-
-
 }
 .totalOrganizations{
     position: absolute;
@@ -109,20 +105,20 @@
     text-align: center;
     border-radius: 10px;
 }
-table {
+#donationHistoryTable {
     border-collapse: collapse;
     width: 100%;
     height: 1000px;
     margin-left: 20px;
 
   }
-.table{
+.tableContainer{
   height: 400px;
   overflow: auto;
 
   }
     
-  th {
+  #donationHistoryTable th {
     font-size:20px;
     font-weight:500;
     top: 0;
@@ -133,12 +129,12 @@ table {
 
   }
     
-  td,tr,th {
+  #donationHistoryTable td,tr,th {
     font-family: var(--normal-font);
     
 
   }
-  td,tr{
+  #donationHistoryTable td,tr{
     color: var(--third-color);
     font-weight:normal;
 
@@ -146,17 +142,17 @@ table {
   }
   
   
-  tr:nth-child(n){
+  #donationHistoryTable tr:nth-child(n){
     background-color: #FFFFFF;
 
   }
   
   
- tr:hover{
+ #donationHistoryTable tr:hover{
      background-color:  #ddd;
 
  }
- tr:hover td{
+ #donationHistoryTable tr:hover td{
    color: var(--second-color);
    font-weight: bold;
    font-size: large;

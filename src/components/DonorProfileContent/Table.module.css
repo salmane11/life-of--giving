@@ -20,20 +20,20 @@
     text-align: center;
     border-radius: 10px;
 }
-table {
+#donationsTable {
     border-collapse: collapse;
     width: 750px;
     height: 900px;
     margin-left: 20px;
 
   }
-.table{
+.tableContainer{
   height: 300px;
   overflow: auto;
 
   }
     
-  th {
+  #donationsTable th {
     font-size:20px;
     font-weight:500;
     top: 0;
@@ -44,12 +44,12 @@ table {
 
   }
     
-  td,tr,th {
+  #donationsTable td,tr,th {
     font-family: var(--normal-font);
     
 
   }
-  td,tr{
+  #donationsTable td,tr{
     color: var(--third-color);
     font-weight:normal;
 
@@ -57,22 +57,18 @@ table {
   }
   
   
-  tr:nth-child(n){
+  #donationsTable tr:nth-child(n){
     background-color: #FFFFFF;
-
   }
   
-  
- tr:hover{
+ #donationsTable tr:hover{
      background-color:  #ddd;
 
  }
- tr:hover td{
+ #donationsTable tr:hover td{
    color: var(--second-color);
    font-weight: bold;
    font-size: large;
-
-
  }
  
  
