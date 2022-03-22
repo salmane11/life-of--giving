@@ -17,7 +17,7 @@ const PageContainer = () => {
                         <EntityConverter entity={'family'} entityPrice={20} target={900}/>
                     </div>
                 </div>
-                <TitleSection title={'Payment Information'} marginLeftTitle={'52%'}/>
+                <TitleSection title={'Donation Information'} marginLeftTitle={'50%'}/>
                 <StripeContainer />
             </div>
         </>
