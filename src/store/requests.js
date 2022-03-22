@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 
 export const host="http://localhost:8080";
 export const organizationshost="http://localhost:8081";
+export const donationshost="http://localhost:8082";
 
 const useHttp = () => {
   const [isLoading, setIsLoading] = useState(false);

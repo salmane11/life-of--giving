@@ -10,7 +10,7 @@ function Request(props){
                 <h2>{props.organizationName}</h2>
                 <p>{props.organizationDescription}</p>
             </div>
-            <Button><Link to={`/requests/${props.organizationId}`}>Show Details</Link></Button>
+            <Button><Link to={`/requests/${props.organizationId}`} className={styles.requestlink}>Show Details</Link></Button>
         </div>
     )
 }

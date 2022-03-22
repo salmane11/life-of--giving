@@ -2,135 +2,60 @@ import Button from "../ui/Button";
 import SearchBar from "../ui/SearchBar";
 import Association from "./Association";
 import styles from "./AssociationsList.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import useHttp, { organizationshost } from "../../store/requests";
-
-const associations = [
-  {
-    associationId: 1,
-    image: "/images/logo.png",
-    name: "AL Yussr",
-    category: "orphelin",
-    location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
-    number: "+21212345678",
-  },
-  {
-    associationId: 2,
-    image: "/images/logo1.png",
-    name: "Attadamoun foundation",
-    category: "category",
-    location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
-    number: "+21212345678",
-  },
-  {
-    associationId: 3,
-    image: "/images/logo2.png",
-    name: "Childhood happyiness",
-    category: "children",
-    location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
-    number: "+21212345678",
-  },
-  {
-    associationId: 4,
-    image: "/images/logo3.png",
-    name: "Angels foundation",
-    category: "children",
-    location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
-    number: "+21212345678",
-  },
-  {
-    associationId: 5,
-    image: "/images/logo4.png",
-    name: "AL Yussr",
-    category: "orphelin",
-    location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
-    number: "+21212345678",
-  },
-  {
-    associationId: 6,
-    image: "/images/logo5.png",
-    name: "Homelessness foundation",
-    category: "homelessness",
-    location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
-    number: "+21212345678",
-  },
-  {
-    associationId: 7,
-    image: "/images/logo.png",
-    name: "AL Yussr",
-    category: "orphelin",
-    location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
-    number: "+21212345678",
-  },
-  {
-    associationId: 8,
-    image: "/images/logo1.png",
-    name: "Attadamoun foundation",
-    category: "category",
-    location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
-    number: "+21212345678",
-  },
-  {
-    associationId: 9,
-    image: "/images/logo2.png",
-    name: "Childhood happyiness",
-    category: "children",
-    location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
-    number: "+21212345678",
-  },
-  {
-    associationId: 10,
-    image: "/images/logo3.png",
-    name: "Angels foundation",
-    category: "orphelin",
-    location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
-    number: "+21212345678",
-  },
-  {
-    associationId: 11,
-    image: "/images/logo4.png",
-    name: "AL Yussr",
-    category: "orphelin",
-    location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
-    number: "+21212345678",
-  },
-  {
-    associationId: 12,
-    image: "/images/logo5.png",
-    name: "Homelessness foundation",
-    category: "homelessness",
-    location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
-    number: "+21212345678",
-  },
-];
+import userContext from "../../store/userContext";
 
 function AssociationsList() {
+  const userctx = useContext(userContext);
+
   const [selectedFilter, setSelectedFilter] = useState("all");
   const filterHandler = (event) => {
     setSelectedFilter(event.target.value);
   };
 
+  const [loadedAssociations, setLoadedAssociations] = useState([]);
+  const transformAssociations = (list) => {
+    console.log(list);
+    const associations = [];
+    for (var key in list) {
+      associations.push({
+        associationId: list[key].id,
+        image: "/images/logo5.png",
+        name: list[key].name,
+        category: "homelessness",
+        location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
+        number: "+21212345678",
+      });
+    }
+    setLoadedAssociations(associations);
+  };
+
   //use an existing custom hook for http requests to get all verified associations
   const { isLoading, error, sendRequest: getAssociations } = useHttp();
 
-  useEffect(()=>{
+  useEffect(() => {
     getAssociations(
       {
-        url: organizationshost+"/organisations/verified",
+        url: organizationshost + "/organisations/verified",
         method: "get",
-        headers: { "Content-Type": "Application/json" },
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: userctx.userToken,
+        },
       },
-      (object)=>{console.log(object);}
-    )
-  },[getAssociations]);
+      transformAssociations
+    );
+  }, [getAssociations,userctx.userToken]);
 
-  const [filteredAssociations, setFilteredAssociations] = useState(associations);
+  const [filteredAssociations, setFilteredAssociations] =
+    useState(loadedAssociations);
   useEffect(() => {
     if (selectedFilter === "all") {
-      setFilteredAssociations(associations);
+      setFilteredAssociations(loadedAssociations);
     } else if (selectedFilter === "other") {
       setFilteredAssociations(
-        associations.filter(
+        loadedAssociations.filter(
           (association) =>
             association.category !== "orphelin" &&
             association.category !== "homelessness" &&
@@ -140,16 +65,16 @@ function AssociationsList() {
       );
     } else {
       setFilteredAssociations(
-        associations.filter(
+        loadedAssociations.filter(
           (association) => association.category === selectedFilter
         )
       );
     }
-  }, [selectedFilter]);
+  }, [selectedFilter, loadedAssociations]);
 
   return (
     <div className={styles.associations}>
-      <h1>Browse community fund raisers</h1>$
+      <h1>Browse community fund raisers</h1>
       <div className={styles.searchfilter}>
         <SearchBar className={styles.searchbar} />
         <form className={styles.filter}>

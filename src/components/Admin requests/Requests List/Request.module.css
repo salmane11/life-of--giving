@@ -19,9 +19,11 @@
 }
 .request button{
     flex:0.2;
-    height: 30px;
     border-radius: 5px;
     font-size: 20px;
+}
+.requestlink {
+    text-decoration: none;
 }
 .informations {
     font-family: var(--normal-font);

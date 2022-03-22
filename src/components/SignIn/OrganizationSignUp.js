@@ -60,6 +60,7 @@ function OrganizationSignUp() {
         headers: { "Content-Type": "Application/json" },
         body: {
           name: organizationName,
+          image:organizationLogo,
           email,
           password,
           description: organizationDescription,

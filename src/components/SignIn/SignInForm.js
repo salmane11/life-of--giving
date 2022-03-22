@@ -1,6 +1,6 @@
 import Button from "../ui/Button";
 import styles from "./SignInForm.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PersonIcon from "@mui/icons-material/Person";
 import GroupIcon from "@mui/icons-material/Group";
 import { useContext, useState } from "react";
@@ -12,7 +12,7 @@ function SignInForm() {
 
   //use the existing custom hook for http requests
   const { isLoading, error, sendRequest: signin } = useHttp();
-
+  const navigate = useNavigate();
   const returnedDataHandler = (contextData) => {
     console.log(contextData);
     if (!error) {
@@ -22,6 +22,13 @@ function SignInForm() {
         contextData.role,
         contextData.token
       );
+      if (contextData.role === "ADMIN") {
+        navigate("/administrator-dashboard");
+      }else if(contextData.role==="DONOR"){
+        navigate("/projects");
+      }else if(contextData.role==="ORGANISATION"){
+        navigate("/organization-profile");
+      }
     }
   };
 

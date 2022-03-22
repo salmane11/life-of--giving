@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import Content from "../components/HomePageContent/Content";
 import Joincontainer from "../components/JoinUs/JoinContainer";
 import Slider from "../components/Slider/Slider";
+import userContext from "../store/userContext";
 
 function HomePage() {
+  const userctx=useContext(userContext);
   const homeContent = [
     {
       src: "/images/content1.jpg",
@@ -29,7 +32,7 @@ function HomePage() {
           reverse={element.src === "/images/content2.jpg"}
         />
       ))}
-      <Joincontainer/>
+      {!userctx.loggedIn && <Joincontainer/>}
     </>
   );
 }

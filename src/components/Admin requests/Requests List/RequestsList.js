@@ -1,21 +1,24 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import useHttp, { organizationshost } from "../../../store/requests";
+import userContext from "../../../store/userContext";
 import Request from "./Request";
 import styles from "./RequestList.module.css";
 
 function RequestsList() {
-  const [requests,setRequests]=useState([]);
-  const requestsHandler=(list)=>{
-    const uploadedRequests=[];
-    for(var key in list){
+  const userctx = useContext(userContext);
+
+  const [requests, setRequests] = useState([]);
+  const requestsHandler = (list) => {
+    const uploadedRequests = [];
+    for (var key in list) {
       uploadedRequests.push({
-        organizationId:list[key].id,
-        organizationName:list[key].name,
-        organizationDescription:list[key].description
-      })
-    };
+        organizationId: list[key].id,
+        organizationName: list[key].name,
+        organizationDescription: list[key].description,
+      });
+    }
     setRequests(uploadedRequests);
-  }
+  };
 
   const { isLoading, error, sendRequest: getRequests } = useHttp();
 
@@ -24,11 +27,14 @@ function RequestsList() {
       {
         url: organizationshost + "/organisations/notverified",
         method: "get",
-        headers: { "Content-Type": "Application/json" },
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: userctx.userToken,
+        },
       },
       requestsHandler
     );
-  }, [getRequests]);
+  }, [getRequests,userctx.userToken]);
 
   return (
     <>

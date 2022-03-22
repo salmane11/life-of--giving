@@ -13,7 +13,7 @@ function Navigation() {
           {/** the active className help styling a link (only for navlink) when it's active
            * we can render links conditionnally based on the user role fetched from the user context
            */}
-          {userctx.userRole === "ADMINISTRATOR" ? (
+          {userctx.userRole === "ADMIN" ? (
             <NavLink
               className={({ isActive }) =>
                 !isActive ? styles.link : styles.activelink

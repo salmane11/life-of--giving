@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useHttp, { organizationshost } from "../../../store/requests";
+import userContext from "../../../store/userContext";
 import Button from "../../ui/Button";
 import styles from "./RequestDetails.module.css";
 
 function RequestDetails() {
+  const userctx = useContext(userContext);
+
   const [requestDetails, setRequestDetails] = useState({});
   const requestDetailsHandler = (loadedRequest) => {
     setRequestDetails(loadedRequest);
@@ -17,11 +20,56 @@ function RequestDetails() {
       {
         url: organizationshost + `/organisations/${associationId}`,
         method: "get",
-        headers: { "Content-Type": "Application/json" },
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: userctx.userToken,
+        },
       },
       requestDetailsHandler
     );
-  }, [associationId,getRequestById]);
+  }, [associationId, getRequestById, userctx.userToken]);
+
+  //usehttp to delete a request
+  const {
+    declineIsLoading,
+    declineError,
+    sendRequest: declineRequest,
+  } = useHttp();
+  const declineHandler = () => {
+    declineRequest(
+      {
+        url: organizationshost + `/organisations/${associationId}`,
+        method: "delete",
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: userctx.userToken,
+        },
+      },
+      () => {}
+    );
+    console.log(declineIsLoading, declineError);
+  };
+
+  //usehttp to approave a request
+  const {
+    approavalIsLoading,
+    approavalError,
+    sendRequest: approaveRequest,
+  } = useHttp();
+  const approavalHandler = () => {
+    approaveRequest(
+      {
+        url: organizationshost + `/organisations/${associationId}`,
+        method: "Put",
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: userctx.userToken,
+        },
+      },
+      (object) => {console.log(object)}
+    );
+    console.log(approavalIsLoading, approavalError);
+  };
 
   return (
     <div className={styles.requestdetails}>
@@ -75,8 +123,8 @@ function RequestDetails() {
         />
       </div>
       <div className={styles.buttons}>
-        <Button>Approve Request</Button>
-        <Button>Decline Request</Button>
+        <Button onClick={approavalHandler}>Approve Request</Button>
+        <Button onClick={declineHandler}>Decline Request</Button>
       </div>
     </div>
   );

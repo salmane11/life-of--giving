@@ -10,13 +10,14 @@ import OrganizationSignUpPage from "./pages/OrganizationSignUpPage";
 import Projects from "./pages/Projects";
 import ProjectDescription from "./pages/ProjectDescription";
 import DonationPage from "./pages/DonationPage";
-import { UserContextProvider } from "./store/userContext";
+import userContext, { UserContextProvider } from "./store/userContext";
 import PostProjectPage from "./pages/PostProjectPage";
 import AdministratorDashboardPage from "./pages/AdministratorDashboardPage";
 import RequestsPage from "./pages/RequestsPage";
 import RequestDetails from "./components/Admin requests/RequestsDetails/RequestDetails";
 import NewAdminPage from "./pages/NewAdminPage";
 import AssociationPage from "./pages/AssociationsPage";
+import AssociationProfileUpdatePage from "./pages/AssociationProfileUpdatePage";
 
 
 
@@ -36,13 +37,13 @@ function App() {
         <Route path='/donation' element={<DonationPage className="element"/>} />
         <Route path='/post-project' element={<PostProjectPage  className="element"/>}></Route>
         <Route path="/associations" element={<AssociationPage/>} />
+        <Route path="/organization-profile" element={<AssociationProfileUpdatePage/>} />
         <Route path="/donors" element={<h1 className="element">this is donors page</h1>} />
         <Route path="/administrator-dashboard" element={<AdministratorDashboardPage />} />
         <Route path="/requests" element={<RequestsPage />} />
         <Route path="/requests/:associationId" element={<RequestDetails/>} />
         <Route path="/new-administrator" element={<NewAdminPage/>} />
         <Route path="/donor-profile" element={<h1 className="element">this is the donor-profile</h1>} />
-        <Route path="/organization-profile" element={<h1 className="element">this is the organization-profile</h1>} />
         <Route path="/sign-in" element={<SignInPage className="element"/>} />
         <Route path="/donor-sign-up" element={<DonorSignUpPage className="element"/>} />
         <Route path="/organization-sign-up" element={<OrganizationSignUpPage className="element"/>} />

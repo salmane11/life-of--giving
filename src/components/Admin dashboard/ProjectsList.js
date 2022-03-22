@@ -1,34 +1,43 @@
+import { useContext, useEffect, useState } from "react";
+import useHttp, { organizationshost } from "../../store/requests";
+import userContext from "../../store/userContext";
 import Button from "../ui/Button";
 import styles from "./ProjectsList.module.css";
 
 function ProjectsList() {
   //Todo : bring projects list from backend
-  const projects = [
-    {
-      projectName: "homeless people",
-      associationName: "Alyussr",
-      target: 100000,
-      currentBalance: 58000,
-    },
-    {
-      projectName: "winter is coming",
-      associationName: "CAS",
-      target: 500000,
-      currentBalance: 300000,
-    },
-    {
-      projectName: "Happy childhood",
-      associationName: "Childhood Fundation",
-      target: 100000,
-      currentBalance: 42000,
-    },
-    {
-      projectName: "Mosque construction",
-      associationName: "Alyussr",
-      target: 100000,
-      currentBalance: 580000,
-    },
-  ];
+
+  const userctx = useContext(userContext);
+
+  const [projects, setProjects] = useState([]);
+  const transformProjects = (list) => {
+    const loadedProjects = [];
+    for (var key in list) {
+      loadedProjects.push({
+        projectName: list[key].title,
+        associationName: list[key].name,
+        target: list[key].target,
+        currentBalance: list[key].currentBalance,
+      });
+    }
+    setProjects(loadedProjects);
+  };
+  const { isLoading, error, sendRequest: getProjects } = useHttp();
+
+  useEffect(() => {
+    getProjects(
+      {
+        url: organizationshost + "/organisations/projects/admin",
+        method: "get",
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: userctx.userToken,
+        },
+      },
+      transformProjects
+    );
+  }, [getProjects, userctx.userToken]);
+
   return (
     <div className={styles.projectslist}>
       <table className={styles.projectstable}>
