@@ -30,7 +30,7 @@ export const CheckoutForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+/* 
     donate( {
       url: host + '/donation',
       method: "post",
@@ -39,7 +39,7 @@ export const CheckoutForm = () => {
         amount: donatedMoney,
       },
     },
-    (data)=>{console.log(data)});
+    (data)=>{console.log(data)}); */
 
     setDonatedMoney("");
 
@@ -58,13 +58,13 @@ export const CheckoutForm = () => {
       try{
         const { id } = paymentMethod;
         const response = await axios.post(
-            "http://localhost:7000/stripe/charge", {
+            "http://localhost:8082/payment", {
                 amount: 999,
                 id: id,
             }
         );
 
-        console.log("Stripe 35 | data", response.data.success);
+        console.log("Stripe 35 | data", response);
         if(response.data.success){
             console.log("CheckoutForm.js 25 | payment successful!");
             setModalPopupMsg('Your Donation is done successfully! Thanks for being our hero');
