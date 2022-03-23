@@ -1,78 +1,65 @@
-.container{
-    width: 60%;
-    height: 70%;
-    border-radius: 15px;
-    align-content:center;
-    position: absolute;
-    justify-content: center;
-    background-color: var(--first-color);
-    margin-left: 37%;
-    margin-top: 500px;
-    
+.container {
+  width: 60%;
+  height: 70%;
+  border-radius: 15px;
+  align-content: center;
+  position: absolute;
+  justify-content: center;
+  background-color: var(--first-color);
+  margin-left: 37%;
+  margin-top: 500px;
 }
-.container .title{
-    width:fit-content;
-    font-family: var(--titles-font);
-    font-size:25px;
-    color: var(--fourth-color);
-    margin-left: 30%;
-    margin-top: 2%;
-    text-align: center;
-    border-radius: 10px;
+.container .title {
+  width: fit-content;
+  font-family: var(--titles-font);
+  font-size: 25px;
+  color: var(--fourth-color);
+  margin-left: 30%;
+  margin-top: 2%;
+  text-align: center;
+  border-radius: 10px;
 }
 .tablecontainer table {
-    border-collapse: collapse;
-    width: 750px;
-    height: 900px;
-    margin-left: 20px;
-
-  }
-.tablecontainer{
+  border-collapse: collapse;
+  width: 750px;
+  height: 900px;
+  margin-left: 20px;
+}
+.tablecontainer {
   height: 300px;
   overflow: auto;
+}
 
-  }
-    
-  .tablecontainer  th {
-    font-size:20px;
-    font-weight:500;
-    top: 0;
-    background-color:var(--second-color);
-    color: var(--fourth-color);
-    height: 30px;
+.tablecontainer th {
+  font-size: 20px;
+  font-weight: 500;
+  top: 0;
+  background-color: var(--second-color);
+  color: var(--fourth-color);
+  height: 30px;
+}
 
+.tablecontainer td,
+tr,
+th {
+  font-family: var(--normal-font);
+}
 
-  }
-    
-  .tablecontainer td,tr,th {
-    font-family: var(--normal-font);
-    
+.tablecontainer td,
+tr {
+  color: var(--third-color);
+  font-weight: normal;
+}
 
-  }
-  .tablecontainer td,tr{
-    color: var(--third-color);
-    font-weight:normal;
+.tablecontainer tr:nth-child(n) {
+  background-color: #ffffff;
+}
 
-
-  }
-  
-  
-  .tablecontainer tr:nth-child(n){
-    background-color: #FFFFFF;
-
-  }
-  
-  
-  .tablecontainer tr:hover{
-     background-color:  #ddd;
-
- }
- .tablecontainer tr:hover td{
-   color: var(--second-color);
-   font-weight: bold;
-   font-size: large;
-
-
- }
- 
- 
+.tablecontainer tr:hover {
+  background-color: #ddd;
+}
+.tablecontainer tr:hover td {
+  color: var(--second-color);
+  font-weight: bold;
+  font-size: large;
+}

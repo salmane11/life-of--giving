@@ -1,4 +1,4 @@
-.donationForm{
+#donationForm{
   margin-top: -40px;
   align-self: center;
 }
@@ -51,7 +51,7 @@
 /* ::-webkit-input-placeholder { */
   /* vertical-align:middle; */
 /* } */
-td{
+.formTable td{
   padding: 9px;
 }
 #btnContainer{
