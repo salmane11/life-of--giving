@@ -1,11 +1,14 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 import styles from "./DonorSignUp.module.css";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import useHttp, { host } from "../../store/requests";
 
 function OrganizationSignUp() {
+
+  const navigate=useNavigate();
+
   const [organizationName, setOrganizationName] = useState("");
   const [organizationLogo, setOrganizationLogo] = useState(null);
   const [organizationFile, setOrganizationFile] = useState(null);
@@ -68,6 +71,8 @@ function OrganizationSignUp() {
       },
       (data) => {console.log(data);}
     );
+
+    navigate("/sign-in")
 
     setOrganizationName("");
     setOrganizationLogo(null);

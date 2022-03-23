@@ -27,6 +27,7 @@ function ProjectsListed() {
             target: list[key].target,
           })
       }
+      console.log(projects);
       setLoadedProjects(projects);
   }
   const { isLoading, error, sendRequest: getAllProjects } = useHttp();

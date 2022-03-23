@@ -23,7 +23,7 @@ function AssociationsList() {
         associationId: list[key].id,
         image: "/images/logo5.png",
         name: list[key].name,
-        category: "homelessness",
+        category: list[key].category,
         location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
         number: "+21212345678",
       });

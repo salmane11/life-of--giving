@@ -3,10 +3,12 @@ import styles from './ProjectContent.module.css'
 import ProgressBar from '@ramonak/react-progress-bar'
 import Button from '../ui/Button'
 import ProjectCarousel from './ProjectCarousel'
+import { useNavigate } from 'react-router-dom'
 
 // the section of slider and the metadata of the project
 // including the due date, the target and the donate button
 const ProjectContent = () => {
+    const navigate=useNavigate();
     return (
         <>
             <h1 id={styles.projectTitle}>Winter is coming</h1>
@@ -24,7 +26,7 @@ const ProjectContent = () => {
                             height ={40}
                             className= {styles.wrapper}
                         />
-                    <Button className={styles.donateBtn}>Donate Now</Button>
+                    <Button onClick={()=>{navigate("/donation")}} className={styles.donateBtn}>Donate Now</Button>
                 </div>
             </div>
         </>

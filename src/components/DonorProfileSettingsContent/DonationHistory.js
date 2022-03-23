@@ -234,7 +234,7 @@ export default class DonationHistory extends PureComponent {
 				
 				<div className={styles.container}>
             <div className={styles.title}><h1>{name}</h1></div>
-            <div className={styles.table}>
+            <div className={styles.tablecontainer}>
             <table >
         <tr>
           <th>Organization name</th>

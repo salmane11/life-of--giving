@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 import styles from "./DonorSignUp.module.css";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import useHttp, { host } from "../../store/requests";
 
 function DonorSignUp() {
+  const navigate=useNavigate();
+  
   const [donorName, setDonorName] = useState("");
   const [donorImage, setDonorImage] = useState(null);
   const [email, setEmail] = useState("");
@@ -52,6 +54,8 @@ function DonorSignUp() {
       },
     },
     ()=>{});
+
+    navigate("/sign-in");
 
     setDonorName("");
     setDonorImage(null);

@@ -5,7 +5,7 @@ function Table(props) {
   return (
     <div className={styles.container}>
       <div className={styles.title}><h1>{props.name}</h1></div>
-      <div className={styles.table}>
+      <div className={styles.tablecontainer}>
         <table >
           <tbody>
             <tr>
