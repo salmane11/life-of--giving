@@ -1,28 +1,48 @@
 import React, { useState } from "react";
 
 const userContext = React.createContext({
-  userId:"",
+  userId: "",
   userName: "",
   userRole: "",
-  userToken:"",
+  userToken: "",
   loggedIn: false,
-  login: (id,name, role,token) => {},
+  login: (id, name, role, token) => {},
   logout: () => {},
 });
 
 export const UserContextProvider = (props) => {
-  const [userName, setUserName] = useState("anonymous");
-  const [userRole, setUserRole] = useState("anonymous");
-  const [userId, setUserId] = useState("");
-  const [userToken, setUserToken] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [userName, setUserName] = useState(
+    localStorage.getItem("userName")
+      ? localStorage.getItem("userName")
+      : "anonymous"
+  );
+  const [userRole, setUserRole] = useState(
+    localStorage.getItem("userRole")
+      ? localStorage.getItem("userRole")
+      : "anonymous"
+  );
+  const [userId, setUserId] = useState(
+    localStorage.getItem("userId") ? localStorage.getItem("userId") : ""
+  );
+  const [userToken, setUserToken] = useState(
+    localStorage.getItem("userToken") ? localStorage.getItem("userToken") : ""
+  );
+  const [loggedIn, setLoggedIn] = useState(
+    localStorage.getItem("loggedIn") ? localStorage.getItem("loggedIn") : false
+  );
 
-  const loginHandler = (id,user, role,token) => {
+  const loginHandler = (id, user, role, token) => {
     setUserName(user);
     setUserRole(role);
     setUserId(id);
     setUserToken(token);
     setLoggedIn(true);
+    localStorage.setItem("userName", user);
+    localStorage.setItem("userRole", role);
+    localStorage.setItem("userId", id);
+    localStorage.setItem("userToken", token);
+    localStorage.setItem("loggedIn", true);
+    console.log(user, token);
   };
 
   const logoutHandler = () => {
@@ -31,6 +51,12 @@ export const UserContextProvider = (props) => {
     setUserId("");
     setUserToken("");
     setLoggedIn(false);
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userRole");
+    localStorage.removeItem("userId");
+    localStorage.removeItem("userToken");
+    localStorage.removeItem("loggedIn");
+    console.log(userName, userToken);
   };
 
   return (

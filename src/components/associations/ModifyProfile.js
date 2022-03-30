@@ -91,7 +91,7 @@ function ModifyProfile() {
   const submitHandler = (event) => {
     event.preventDefault();
     let profile = {
-      title: organizationName,
+      name: organizationName,
       email,
       phone,
       facebook,
@@ -103,9 +103,12 @@ function ModifyProfile() {
     }
     updateProfile(
       {
-        url: organizationshost + "/organisations/{organizationId}",
-        method: "patch",
-        headers: { "Content-Type": "Application/json" },
+        url: organizationshost + `/organisations/profile/${userctx.userId}`,
+        method: "put",
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: userctx.userToken,
+        },
         body: profile,
       },
       () => {}

@@ -6,8 +6,8 @@ import UploadFileIcon from "@mui/icons-material/UploadFile";
 import useHttp, { host } from "../../store/requests";
 
 function DonorSignUp() {
-  const navigate=useNavigate();
-  
+  const navigate = useNavigate();
+
   const [donorName, setDonorName] = useState("");
   const [donorImage, setDonorImage] = useState(null);
   const [email, setEmail] = useState("");
@@ -32,7 +32,12 @@ function DonorSignUp() {
   };
 
   const donorImageHandler = (event) => {
-    setDonorImage(event.target.files[0]);
+    const reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onloadend = () => {
+      setDonorImage(reader.result);
+      console.log(reader.result);
+    };
   };
   const { isLoading, error, sendRequest: signup } = useHttp();
 
@@ -43,17 +48,19 @@ function DonorSignUp() {
     //TODO POST THESE DATA INTO THE BACKEND
 
     console.log(donorImage);
-    signup({
-      url: host + "/signup/donors",
-      method: "post",
-      headers: { "Content-Type": "Application/json" },
-      body: {
-        name: donorName,
-        email,
-        password,
+    signup(
+      {
+        url: host + "/signup/donors",
+        method: "post",
+        headers: { "Content-Type": "Application/json" },
+        body: {
+          name: donorName,
+          email,
+          password,
+        },
       },
-    },
-    ()=>{});
+      () => {}
+    );
 
     navigate("/sign-in");
 
@@ -79,6 +86,7 @@ function DonorSignUp() {
         </div>
         <div className={styles.inputs}>
           <label>Donor Image</label>
+          {donorImage && <img src={donorImage} alt="donor"/>}
           {/**to style the input file type you need to hide the input tag and use the htmlFor
            * to rely the label with his input and style the label as you want */}
           <label htmlFor="donorimage" className={styles.filelabel}>
