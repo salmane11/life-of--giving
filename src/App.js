@@ -19,13 +19,13 @@ import NewAdminPage from "./pages/NewAdminPage";
 import AssociationPage from "./pages/AssociationsPage";
 import AssociationProfileUpdatePage from "./pages/AssociationProfileUpdatePage";
 import DonorsListPage from "./pages/DonorsListPage";
+import DonorProfileVisitor from "./pages/DonorProfileVisitor";
 import DonorProfile from "./pages/DonorProfile";
 import DonorEditProfile from "./pages/DonorEditProfile";
 import DonorProfileChangePassword from "./pages/DonorProfileChangePassword";
 import DonorProfileDonationHistory from "./pages/DonorProfileDonationHistory";
 import AssociationsDashboardPage from "./pages/AssociationsDashboardPage";
-
-
+import NotFoundError from "./pages/NotFoundError";
 
 
 function App() {
@@ -45,6 +45,7 @@ function App() {
         <Route path="/association-dashboard" element={<AssociationsDashboardPage/>} />
         <Route path="/organization-profile" element={<AssociationProfileUpdatePage/>} />
         <Route path="/donors"exact element={<DonorsListPage className="element"/>}  />
+        <Route path="/donors/:profileId"exact element={<DonorProfileVisitor className="element"/>}  />
         <Route path="/donor-profile"exact element={<DonorProfile className="element"/>}  />
         <Route path="/donor-profile/settings"  exact element={<DonorEditProfile className="element"/>}  />
         <Route path="/donor-profile/change-password"  exact element={<DonorProfileChangePassword className="element"/>}  />
@@ -56,7 +57,7 @@ function App() {
         <Route path="/sign-in" element={<SignInPage className="element"/>} />
         <Route path="/donor-sign-up" element={<DonorSignUpPage className="element"/>} />
         <Route path="/organization-sign-up" element={<OrganizationSignUpPage className="element"/>} />
-        <Route path="*" element={<h1 className="element">404 : page not found</h1>} />
+        <Route path="/error" element={<NotFoundError  className="element"/>} />
       </Routes>
       <Footer/>
     </UserContextProvider>
