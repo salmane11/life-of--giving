@@ -19,6 +19,7 @@ import NewAdminPage from "./pages/NewAdminPage";
 import AssociationPage from "./pages/AssociationsPage";
 import AssociationProfileUpdatePage from "./pages/AssociationProfileUpdatePage";
 import DonorsListPage from "./pages/DonorsListPage";
+import DonorProfileVisitor from "./pages/DonorProfileVisitor";
 import DonorProfile from "./pages/DonorProfile";
 import DonorEditProfile from "./pages/DonorEditProfile";
 import DonorProfileChangePassword from "./pages/DonorProfileChangePassword";
@@ -41,6 +42,7 @@ function App() {
         <Route path="/associations" element={<AssociationPage/>} />
         <Route path="/organization-profile" element={<AssociationProfileUpdatePage/>} />
         <Route path="/donors"exact element={<DonorsListPage className="element"/>}  />
+        <Route path="/donors/:profileId"exact element={<DonorProfileVisitor className="element"/>}  />
         <Route path="/donor-profile"exact element={<DonorProfile className="element"/>}  />
         <Route path="/donor-profile/settings"  exact element={<DonorEditProfile className="element"/>}  />
         <Route path="/donor-profile/change-password"  exact element={<DonorProfileChangePassword className="element"/>}  />
