@@ -5,6 +5,7 @@ const userContext = React.createContext({
   userName: "",
   userRole: "",
   userToken: "",
+  userImage:"",
   loggedIn: false,
   login: (id, name, role, token) => {},
   logout: () => {},
@@ -15,6 +16,11 @@ export const UserContextProvider = (props) => {
     localStorage.getItem("userName")
       ? localStorage.getItem("userName")
       : "anonymous"
+  );
+  const [userImage, setUserImage] = useState(
+    localStorage.getItem("userImage")
+      ? localStorage.getItem("userImage")
+      : "/images/inko.png"
   );
   const [userRole, setUserRole] = useState(
     localStorage.getItem("userRole")
@@ -31,16 +37,18 @@ export const UserContextProvider = (props) => {
     localStorage.getItem("loggedIn") ? localStorage.getItem("loggedIn") : false
   );
 
-  const loginHandler = (id, user, role, token) => {
+  const loginHandler = (id, user, role, token, image) => {
     setUserName(user);
     setUserRole(role);
     setUserId(id);
     setUserToken(token);
     setLoggedIn(true);
+    setUserImage(image);
     localStorage.setItem("userName", user);
     localStorage.setItem("userRole", role);
     localStorage.setItem("userId", id);
     localStorage.setItem("userToken", token);
+    localStorage.setItem("userImage", image);
     localStorage.setItem("loggedIn", true);
     console.log(user, token);
   };
@@ -50,11 +58,13 @@ export const UserContextProvider = (props) => {
     setUserRole("anonymous");
     setUserId("");
     setUserToken("");
+    setUserImage("/images/inko.png");
     setLoggedIn(false);
     localStorage.removeItem("userName");
     localStorage.removeItem("userRole");
     localStorage.removeItem("userId");
     localStorage.removeItem("userToken");
+    localStorage.removeItem("userImage");
     localStorage.removeItem("loggedIn");
     console.log(userName, userToken);
   };
@@ -66,6 +76,7 @@ export const UserContextProvider = (props) => {
         userName,
         userRole,
         userToken,
+        userImage,
         loggedIn,
         login: loginHandler,
         logout: logoutHandler,
