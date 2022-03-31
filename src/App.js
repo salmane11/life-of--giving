@@ -23,7 +23,8 @@ import DonorProfile from "./pages/DonorProfile";
 import DonorEditProfile from "./pages/DonorEditProfile";
 import DonorProfileChangePassword from "./pages/DonorProfileChangePassword";
 import DonorProfileDonationHistory from "./pages/DonorProfileDonationHistory";
-import NotFoundError from "./pages/NotFoundError"
+import NotFoundError from "./pages/NotFoundError";
+import AboutUsPage from "./pages/AboutUsPage";
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" exact element={<HomePage className="element"/>} />
-        <Route path="/about-us" element={<h1 className="element">this is about-us page</h1>} />
+        <Route path="/about-us" element={<AboutUsPage className="element"/>} />
         <Route path="/projects" element={<Projects className="element"/>} />
         <Route path="/project-description" element={<ProjectDescription className="element"/>} />
         <Route path='/donation' element={<DonationPage className="element"/>} />
@@ -52,7 +53,7 @@ function App() {
         <Route path="/sign-in" element={<SignInPage className="element"/>} />
         <Route path="/donor-sign-up" element={<DonorSignUpPage className="element"/>} />
         <Route path="/organization-sign-up" element={<OrganizationSignUpPage className="element"/>} />
-        <Route path="/error" element={<NotFoundError  className="element"/>} />
+        <Route path="/*" element={<NotFoundError  className="element"/>} />
       </Routes>
       <Footer/>
     </UserContextProvider>

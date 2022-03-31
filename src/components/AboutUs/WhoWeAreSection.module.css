@@ -1,0 +1,5 @@
+.whoWeAre{
+    color: var(--third-color);
+    font-family: var(--titles-font);
+    font-size: 40px;
+}
