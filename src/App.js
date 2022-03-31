@@ -23,9 +23,7 @@ import DonorProfile from "./pages/DonorProfile";
 import DonorEditProfile from "./pages/DonorEditProfile";
 import DonorProfileChangePassword from "./pages/DonorProfileChangePassword";
 import DonorProfileDonationHistory from "./pages/DonorProfileDonationHistory";
-
-
-
+import NotFoundError from "./pages/NotFoundError"
 
 function App() {
   return (
@@ -54,7 +52,7 @@ function App() {
         <Route path="/sign-in" element={<SignInPage className="element"/>} />
         <Route path="/donor-sign-up" element={<DonorSignUpPage className="element"/>} />
         <Route path="/organization-sign-up" element={<OrganizationSignUpPage className="element"/>} />
-        <Route path="*" element={<h1 className="element">404 : page not found</h1>} />
+        <Route path="/error" element={<NotFoundError  className="element"/>} />
       </Routes>
       <Footer/>
     </UserContextProvider>
