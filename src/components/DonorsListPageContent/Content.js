@@ -4,6 +4,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import styles from "./Content.module.css";
 import { useState } from "react";
 import Button from "../ui/Button";
+import { NavLink } from "react-router-dom";
 
 // this component include all the content of donors list page
 
@@ -17,28 +18,34 @@ function Content(props) {
 
     // list of visible donors split by visibleDonors state
     let listDonors = props.list.slice(0, visibleDonors).map((element) => (
-        <div className={styles.card} key={element.donor_image}>
-            <img src={element.donor_image} alt={element.name} />
-            <div className={styles.score}>{element.donor_score}</div>
-            <div className={styles.description}>
-                <h1>{element.donor_name}</h1>
-                <div className={styles.socialNet}>
-                    <span>
-                        <FacebookIcon className={styles.socialIcon} />
-                        <p>{element.donor_fb}</p>
-                    </span>
-                    <span>
-                        <InstagramIcon className={styles.socialIcon} />
-                        <p>{element.donor_insta}</p>
-                    </span>
-                    <span>
-                        <YouTubeIcon className={styles.socialIcon} />
-                        <p>{element.donor_ytb}</p>
-                    </span>
-                </div>
-            </div>
+        <NavLink className={styles.card} to="/donors/:profileId">
 
-        </div>
+            <div key={element.donor_image}>
+
+                <img src={element.donor_image} alt={element.name} />
+                <div className={styles.score}>{element.donor_score}</div>
+                <div className={styles.description}>
+                    <h1>{element.donor_name}</h1>
+                    <div className={styles.socialNet}>
+                        <span>
+                            <FacebookIcon className={styles.socialIcon} />
+                            <p>{element.donor_fb}</p>
+                        </span>
+                        <span>
+                            <InstagramIcon className={styles.socialIcon} />
+                            <p>{element.donor_insta}</p>
+                        </span>
+                        <span>
+                            <YouTubeIcon className={styles.socialIcon} />
+                            <p>{element.donor_ytb}</p>
+                        </span>
+                    </div>
+                </div>
+
+
+            </div>
+        </NavLink>
+
 
     ));
     return (

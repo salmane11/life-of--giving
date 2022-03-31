@@ -21,9 +21,8 @@
 }
 .card{
     width: 30%;
-    height: 300px;
-    --padding:0.2rem;
-    padding: var(--padding);
+    height: 320px;
+    padding-top: 2%;
     border-radius: 15px;
     display: flex;
     position: relative;
@@ -47,7 +46,7 @@
     flex-direction: column;
     align-items: center;
     color: var(--fourth-color);
-    margin: 160px 0px 0px -5%;
+    margin: 53% 0px 0px 30%;
   }
  
   .description h1 {
@@ -80,7 +79,7 @@
 
 }
   .card img {
-    position: absolute;
+    /* position: absolute; */
     border-radius: 10px;
     width: 190px;
     height: 160px;
@@ -106,15 +105,15 @@
     transform:translateY(70%) ;
   }
    .score{
-    position: absolute;
+    /* position: absolute; */
     color: var(--fourth-color);
     text-align: center;
     background-color:var(--second-color) ;
     border-radius: 100%;
     width: 30px;
     height: 25px;
-    margin-left:60% ;
-    margin-top: -1%;
+    margin-left:98% ;
+    margin-top: -90%;
   }
    .button{
     width: 15%;
