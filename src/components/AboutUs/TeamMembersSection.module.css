@@ -1,0 +1,34 @@
+.memberPic{
+    /* width:100%;
+  height:100%;
+  object-fit: cover; */
+  width: 120%;
+  margin-left: -12px;
+  height: 100%;
+  object-fit:cover;
+}
+.circlePic{
+    display: inline-block;
+    overflow: hidden;
+    width: 160px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid var(--second-color);
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.3) 0px 15px 12px;
+}
+
+.circlePic:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, var(--first-color) 0px 15px 12px;
+}
+
+.teamMembers{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.title h4{
+    color: var(--third-color);
+    font-family: var(--titles-font);
+    font-size: 40px;
+}
