@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import useHttp, { organizationshost } from "../../../store/requests";
 import userContext from "../../../store/userContext";
 import Button from "../../ui/Button";
@@ -7,7 +7,7 @@ import styles from "./RequestDetails.module.css";
 
 function RequestDetails() {
   const userctx = useContext(userContext);
-
+  const navigate = useNavigate();
   const [requestDetails, setRequestDetails] = useState({});
   const requestDetailsHandler = (loadedRequest) => {
     setRequestDetails(loadedRequest);
@@ -48,6 +48,7 @@ function RequestDetails() {
       () => {}
     );
     console.log(declineIsLoading, declineError);
+    navigate("/requests");
   };
 
   //usehttp to approave a request
@@ -66,8 +67,11 @@ function RequestDetails() {
           Authorization: userctx.userToken,
         },
       },
-      (object) => {console.log(object)}
+      (object) => {
+        console.log(object);
+      }
     );
+    navigate("/associations");
     console.log(approavalIsLoading, approavalError);
   };
 

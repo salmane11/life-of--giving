@@ -1,0 +1,19 @@
+.events{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    margin:10px;
+    border-radius: 15px;
+}
+.events h1{
+    font-family: var(--titles-font);
+    color:var(--fourth-color);
+    padding: 15px;
+}
+.mycalendar{
+    border-radius: 10px;
+    color: var(--fourth-color);
+    margin-bottom: 10px;
+}

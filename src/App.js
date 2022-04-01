@@ -10,7 +10,7 @@ import OrganizationSignUpPage from "./pages/OrganizationSignUpPage";
 import Projects from "./pages/Projects";
 import ProjectDescription from "./pages/ProjectDescription";
 import DonationPage from "./pages/DonationPage";
-import userContext, { UserContextProvider } from "./store/userContext";
+import { UserContextProvider } from "./store/userContext";
 import PostProjectPage from "./pages/PostProjectPage";
 import AdministratorDashboardPage from "./pages/AdministratorDashboardPage";
 import RequestsPage from "./pages/RequestsPage";
@@ -24,6 +24,7 @@ import DonorProfile from "./pages/DonorProfile";
 import DonorEditProfile from "./pages/DonorEditProfile";
 import DonorProfileChangePassword from "./pages/DonorProfileChangePassword";
 import DonorProfileDonationHistory from "./pages/DonorProfileDonationHistory";
+import AssociationsDashboardPage from "./pages/AssociationsDashboardPage";
 import NotFoundError from "./pages/NotFoundError";
 import AboutUsPage from "./pages/AboutUsPage";
 
@@ -41,6 +42,7 @@ function App() {
         <Route path='/donation' element={<DonationPage className="element"/>} />
         <Route path='/post-project' element={<PostProjectPage  className="element"/>}></Route>
         <Route path="/associations" element={<AssociationPage/>} />
+        <Route path="/association-dashboard" element={<AssociationsDashboardPage/>} />
         <Route path="/organization-profile" element={<AssociationProfileUpdatePage/>} />
         <Route path="/donors"exact element={<DonorsListPage className="element"/>}  />
         <Route path="/donors/:profileId"exact element={<DonorProfileVisitor className="element"/>}  />

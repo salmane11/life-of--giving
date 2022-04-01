@@ -18,7 +18,7 @@ function Content(props) {
 
     // list of visible donors split by visibleDonors state
     let listDonors = props.list.slice(0, visibleDonors).map((element) => (
-        <NavLink className={styles.card} to="/donors/:profileId">
+        <NavLink key={element.donor_Id} className={styles.card} to={`/donors/${element.donor_Id}`}>
 
             <div key={element.donor_image}>
 

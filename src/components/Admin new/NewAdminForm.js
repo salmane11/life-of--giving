@@ -2,14 +2,14 @@ import Button from "../ui/Button";
 import styles from "./NewAdminForm.module.css";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import { useContext, useState } from "react";
-import useHttp, { host } from "../../store/requests";
+import { host, useHttpImages } from "../../store/requests";
 import userContext from "../../store/userContext";
 
 function NewAdminForm() {
   const userctx = useContext(userContext);
 
   const [administratorName, setAdministratorName] = useState("");
-  const [administratorImage, setAdministratorImage] = useState(null);
+  const [administratorImage, setAdministratorImage] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmedPassword, setConfirmedPassword] = useState("");
@@ -32,37 +32,38 @@ function NewAdminForm() {
   };
 
   const administratorImageHandler = (event) => {
+    // const reader = new FileReader();
+    // reader.readAsDataURL(event.target.files[0]);
+    // reader.onloadend = () => {
+    //   setAdministratorImage(reader.result);
+    // };
+
     setAdministratorImage(event.target.files[0]);
   };
 
-  const { isLoading, error, sendRequest: addAdministrator } = useHttp();
+  const { isLoading, error, sendRequest: addAdministrator } = useHttpImages();
+
   const submitHandler = (event) => {
     //to prevent page refresh on every submit
     event.preventDefault();
 
-    //TODO POST THESE DATA INTO THE BACKEND
+    const data = new FormData();
+    data.append("name", administratorName);
+    data.append("email", email);
+    data.append("image", administratorImage);
+    data.append("password", password);
 
-    console.log(
-      administratorName,
-      administratorImage,
-      email,
-      password,
-      confirmedPassword
-    );
+    //TODO POST THESE DATA INTO THE BACKEND
+    console.log(data.get("image"));
 
     addAdministrator(
       {
         url: host + "/admins",
         method: "post",
         headers: {
-          "Content-Type": "Application/json",
           Authorization: userctx.userToken,
         },
-        body: {
-          name: administratorName,
-          email: email,
-          password: password,
-        },
+        body: data,
       },
       () => {}
     );
@@ -82,6 +83,7 @@ function NewAdminForm() {
           type="text"
           placeholder="Mohammed Lasfar"
           onChange={administratorNameHandler}
+          value={administratorName}
         />
       </div>
       <div className={styles.inputs}>
@@ -90,6 +92,7 @@ function NewAdminForm() {
           type="email"
           placeholder="xyz@gmail.com"
           onChange={emailHandler}
+          value={email}
         />
       </div>
       <div className={styles.inputs}>
@@ -101,6 +104,8 @@ function NewAdminForm() {
         <input
           id="administratorimage"
           type="file"
+          multiple
+          accept="image/*"
           onChange={administratorImageHandler}
         />
       </div>
@@ -110,6 +115,7 @@ function NewAdminForm() {
           type="password"
           placeholder="*********"
           onChange={passwordHandler}
+          value={password}
         />
       </div>
       <div className={styles.inputs}>
@@ -118,6 +124,7 @@ function NewAdminForm() {
           type="password"
           placeholder="*********"
           onChange={confirmedPasswordHandler}
+          value={confirmedPassword}
         />
       </div>
       <div className={styles.buttons}>

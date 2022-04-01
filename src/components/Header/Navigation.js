@@ -90,7 +90,7 @@ function Navigation() {
             className={({ isActive }) =>
               !isActive ? styles.link : styles.activelink
             }
-            to="/organization-profile"
+            to="/association-dashboard"
           >
             OurProfile
           </NavLink>
