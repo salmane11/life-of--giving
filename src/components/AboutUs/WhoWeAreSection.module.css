@@ -2,4 +2,40 @@
     color: var(--third-color);
     font-family: var(--titles-font);
     font-size: 40px;
+    margin-top: 20px;
+}
+#caption{
+    text-align: center;
+    font-family: var(--normal-font);
+    color: var(--third-color);
+    font-size: 22px;
+}
+#definition{
+    text-align: center;
+    font-family: var(--normal-font);
+    color: var(--third-color);
+    font-size: 18px;
+}
+.icon{
+    width: 55px !important;
+    height: 55px !important;
+    color: var(--second-color);
+    margin-left: 40%;
+    margin-bottom: 18px;
+    /* align-self: center; */
+    /* padding: auto; */
+}
+
+#descriptions{
+    margin-top: 20px;
+}
+.definition{
+    color: var(--third-color);
+}
+.desc{
+    color: var(--third-color);
+    font-family: var(--normal-font);
+}
+#container{
+    margin-bottom: 10px;
 }
