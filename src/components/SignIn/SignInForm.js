@@ -27,7 +27,7 @@ function SignInForm() {
       }else if(contextData.role==="DONOR"){
         navigate("/projects");
       }else if(contextData.role==="ORGANISATION"){
-        navigate("/organization-profile");
+        navigate("/association-dashboard");
       }
     }
   };

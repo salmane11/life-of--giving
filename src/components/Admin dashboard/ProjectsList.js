@@ -49,7 +49,7 @@ function ProjectsList() {
             <th>CurrentBalance</th>
           </tr>
         </thead>
-        {projects.map((element) => (
+        {projects.slice(0,4).map((element) => (
           <tbody key={element.projectName}>
             <tr>
               <td>{element.projectName}</td>

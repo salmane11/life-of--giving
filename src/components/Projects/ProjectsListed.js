@@ -23,7 +23,7 @@ function ProjectsListed() {
             ProjectId:list[key].id,
             name: list[key].title,
             image: project9,
-            progression: +100*((+list[key].currentBalance)/(+list[key].target)),
+            progression: (100*((list[key].currentBalance)/(+list[key].target))).toPrecision(4),
             target: list[key].target,
           })
       }
