@@ -1,73 +1,74 @@
 .container{
-    width: 95%;
-    height: 600px;
-    border-radius: 15px;
-    display: flex;
-    background-color: var(--first-color);
-    margin-bottom: 20px;
-    margin-top: 30px;
-    margin-left: 2%;
+  width: 95%;
+  height: 600px;
+  border-radius: 15px;
+  display: flex;
+  background-color: var(--first-color);
+  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-left: 2%;
 }
 .item1{
-    margin-left: 15%;
+  margin-left: 15%;
 
 }
 .item1 img {
-    display: flex;
-    border-radius: 50%;
-    width: 60%;
-    height: 50%;
-    box-shadow: 2px 2px 20px 2px var(--second-color);
-    margin-top: 10%;
-    margin-left: 15%;
+  display: flex;
+  border-radius: 50%;
+  width: 60%;
+  height: 50%;
+  box-shadow: 2px 2px 20px 2px var(--second-color);
+  margin-top: 10%;
+  margin-left: 15%;
 
 
-  }
-  .item1 .imageUnderText{
-      margin-left: 23%;
-      margin-top: 2%;
-  }
+}
+.item1 .imageUnderText{
+    margin-left: 23%;
+    margin-top: 2%;
+}
 .item1 h1 {
-    font-family: var(--titles-font);
-    font-size:3em;
-    color: var(--third-color);
+  font-family: var(--titles-font);
+  font-size:3em;
+  color: var(--third-color);
 
 
-  }
+}
 .socialNetwork,.score ,.date{
-    color: var(--fourth-color);
-    font-family: var(--normal-font);
-    margin-left: 10%;
-    font-size:130%;
-  }
+  color: var(--fourth-color);
+  font-family: var(--normal-font);
+  margin-left: 10%;
+  font-size:130%;
+}
 
-  .item2{
-    margin-top: 10%;
-    padding:5% 0 14% 7%;
-    width: 40%;
-    height: 20%;
-    background-color: white;
-    border-radius: 15px;
-  }
-  .item2 .total{
-      color: var(--second-color);
-      font-family: var(--titles-font);
-      font-weight: bolder;
-      font-size: 220%;
-      margin-left: 1%;
-  }
-  .item2 .score{
-    font-size:150%;
-    font-weight: bold;
+.item2{
+  margin-top: 10%;
+  padding:5% 0 14% 7%;
+  width: 40%;
+  height: 20%;
+  background-color: white;
+  border-radius: 15px;
+}
+.item2 .total{
+    color: var(--second-color);
+    font-family: var(--titles-font);
+    font-weight: bolder;
+    font-size: 220%;
+    margin-left: 1%;
+}
+.item2 .score{
+  font-size:150%;
+  font-weight: bold;
+  margin-left: 5%;
 
-  }
-  .item2 .icon{
-      color: var(--second-color);
-  }
+}
+.item2 .icon{
+    color: var(--second-color);
+}
 
-  .item2 .date{
-      font-family: var(--titles-font);
-      font-size: 130%;
-      margin-left: 9%;
+.item2 .date{
+    font-family: var(--titles-font);
+    font-size: 130%;
+    margin-left: 9%;
 
-  }
+}

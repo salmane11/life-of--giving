@@ -2,6 +2,7 @@ import styles from "./CardSettings.module.css";
 import Button from "../ui/Button";
 import MilitaryTechSharpIcon from '@mui/icons-material/MilitaryTechSharp';
 import MonetizationOnSharpIcon from '@mui/icons-material/MonetizationOnSharp';
+import { NavLink } from "react-router-dom";
 function CardSettings(props) {
 
     return (
@@ -29,10 +30,9 @@ function CardSettings(props) {
                     <p className={styles.mediumText} >{props.donor_bio}</p>
                 </div>
                 <div className={styles.more_pages}>
-                <Button className={styles.button}><p className={styles.choices}>Dashboard</p></Button>
-                <Button className={styles.button}><p className={styles.choices}>Saved publications</p></Button>
+                <NavLink to='/donor-profile'><Button className={styles.button}><p className={styles.choices}>My Profile</p></Button></NavLink>
                 <Button className={styles.selected_button}><p className={styles.choices}>Account settings </p></Button>
-                <Button className={styles.button}><p className={styles.choices}>Get help </p></Button>
+                <NavLink to='/about-us'> <Button className={styles.button}><p className={styles.choices}>Get help </p></Button></NavLink>
                 </div>
 
             </div>

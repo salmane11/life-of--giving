@@ -3,11 +3,12 @@
   height: 70%;
   border-radius: 15px;
   align-content: center;
-  position: absolute;
+  /* position: absolute; */
   justify-content: center;
   background-color: var(--first-color);
   margin-left: 37%;
-  margin-top: 500px;
+  margin-top: -20%;
+  margin-bottom: 5%;
 }
 .container .title {
   width: fit-content;
@@ -22,7 +23,7 @@
 .tablecontainer table {
   border-collapse: collapse;
   width: 750px;
-  height: 900px;
+  /* height: 900px; */
   margin-left: 20px;
 }
 .tablecontainer {
