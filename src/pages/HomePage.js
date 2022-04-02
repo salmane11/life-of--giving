@@ -3,6 +3,7 @@ import Content from "../components/HomePageContent/Content";
 import Joincontainer from "../components/JoinUs/JoinContainer";
 import Slider from "../components/Slider/Slider";
 import userContext from "../store/userContext";
+import image3 from "../assets/content3.jpg"
 
 function HomePage() {
   const userctx=useContext(userContext);
@@ -16,6 +17,12 @@ function HomePage() {
     {
       src: "/images/content2.jpg",
       title: "Help your organization collect donation all over the world",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    },
+    {
+      src: image3,
+      title: "Giving does not only precede receiving; it is the reason for it. It is in giving that we receive.",
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
