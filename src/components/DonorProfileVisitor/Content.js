@@ -45,7 +45,10 @@ function Content() {
   }, [donorId, getDonorById, userctx.userToken]);
 
   return (
-    <div className={styles.container}>
+    <>
+    {/* {isLoading && <p>isLoading ...</p>}
+    {error && <p>{error}</p>} */}
+    <div className={styles.container}> 
       <div className={styles.item1}>
         <img
           src={donor.donor_image ? donor.donor_image : "/images/inko.png"}
@@ -81,6 +84,7 @@ function Content() {
         <p className={styles.date}>Profile created since : {donor.creation_date}</p>
       </div>
     </div>
+    </>
   );
 }
 export default Content;

@@ -9,9 +9,9 @@ function MorePages() {
     return (
         <div className={styles.content}>
             <h1 className={styles.morepages}> More Pages</h1>
-            <NavLink to="/">
+            {/* <NavLink to="/">
                 <Button className={styles.button}><p className={styles.choices}>Saved publications</p></Button>
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/donor-profile/settings">
 
                 <Button className={styles.button}><p className={styles.choices}>Account settings</p></Button>

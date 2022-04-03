@@ -26,7 +26,7 @@ import DonorProfileChangePassword from "./pages/DonorProfileChangePassword";
 import DonorProfileDonationHistory from "./pages/DonorProfileDonationHistory";
 import AssociationsDashboardPage from "./pages/AssociationsDashboardPage";
 import NotFoundError from "./pages/NotFoundError";
-
+import AboutUsPage from "./pages/AboutUsPage";
 
 function App() {
 
@@ -39,7 +39,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" exact element={<HomePage className="element"/>} />
-        <Route path="/about-us" element={<h1 className="element">this is about-us page</h1>} />
+        <Route path="/about-us" element={<AboutUsPage className="element"/>} />
         <Route path="/projects" element={<Projects className="element"/>} />
         <Route path="/project-description" element={<ProjectDescription className="element"/>} />
         <Route path='/donation' element={<DonationPage className="element"/>} />
@@ -75,7 +75,7 @@ function App() {
 
 
         <Route path="*" element={<NotFoundError  className="element"/>} />
-
+        
       </Routes>
       <Footer/>
     </>
