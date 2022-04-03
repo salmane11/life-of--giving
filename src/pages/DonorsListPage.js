@@ -11,7 +11,7 @@ function DonorsPage() {
     const list = [];
     for (var key in donorsList) {
       list.push({
-        donor_Id: key,
+        donor_Id: donorsList[key].id,
         donor_name: donorsList[key].name,
         donor_fb: "/John Wick",
         donor_insta: "/John_Wick",

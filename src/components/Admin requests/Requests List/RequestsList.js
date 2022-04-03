@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import useHttp, { organizationshost } from "../../../store/requests";
 import userContext from "../../../store/userContext";
+import Spinner from "../../ui/Spinner";
 import Request from "./Request";
 import styles from "./RequestList.module.css";
 
@@ -14,6 +15,7 @@ function RequestsList() {
       uploadedRequests.push({
         organizationId: list[key].id,
         organizationName: list[key].name,
+        organizationImage: list[key].image,
         organizationDescription: list[key].description,
       });
     }
@@ -34,19 +36,23 @@ function RequestsList() {
       },
       requestsHandler
     );
-  }, [getRequests,userctx.userToken]);
+  }, [getRequests, userctx.userToken]);
 
   return (
     <>
       <h1 className={styles.title}>Sign Up Requests</h1>
-      {isLoading && <p>isLoading ...</p>}
-      {error && <p>{error}</p>}
       <div className={styles.requestslist}>
+        {isLoading && <Spinner />}
+        {error && <p>{error}</p>}
         {requests.map((element) => (
           <Request
             key={element.organizationId}
             organizationId={element.organizationId}
-            src="images/logo.jpg"
+            src={
+              element.organizationImage
+                ? element.organizationImage
+                : "/images/inko.png"
+            }
             organizationName={element.organizationName}
             organizationDescription={element.organizationDescription}
           />

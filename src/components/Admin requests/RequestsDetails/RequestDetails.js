@@ -11,6 +11,7 @@ function RequestDetails() {
   const [requestDetails, setRequestDetails] = useState({});
   const requestDetailsHandler = (loadedRequest) => {
     setRequestDetails(loadedRequest);
+    console.log(loadedRequest)
   };
 
   const { associationId } = useParams();
@@ -78,7 +79,10 @@ function RequestDetails() {
   return (
     <div className={styles.requestdetails}>
       <div className={styles.head}>
-        <img src="/images/logo1.png" alt="alyussr" />
+        <img
+          src={requestDetails.image ? requestDetails.image : "/images/inko.png"}
+          alt={requestDetails.name}
+        />
         <h1>{requestDetails.name}</h1>
         {isLoading && <p>isLoading ...</p>}
         {error && <p>{error}</p>}
@@ -121,7 +125,7 @@ function RequestDetails() {
         <h2>Supporting files</h2>
         <object
           title="supporting file"
-          data="/images/CALENDRIER_INE2.pdf"
+          data={requestDetails.verificationFile}
           type="text/html"
           codetype="application/pdf"
         />

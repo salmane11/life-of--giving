@@ -8,7 +8,7 @@ function AdministratorProfile() {
   const userctx=useContext(userContext);
   return (
     <div className={styles.profile}>
-      <img src="/images/donor.jpg" alt="" />
+      <img src={userctx.userImage} alt="" />
       <h1>{userctx.userName}</h1>
       <h3>Administrator</h3>
       <Button>

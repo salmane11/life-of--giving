@@ -10,6 +10,7 @@ function NewAdminForm() {
 
   const [administratorName, setAdministratorName] = useState("");
   const [administratorImage, setAdministratorImage] = useState("");
+  const [administratorImageViewer, setAdministratorImageViewer] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmedPassword, setConfirmedPassword] = useState("");
@@ -32,13 +33,13 @@ function NewAdminForm() {
   };
 
   const administratorImageHandler = (event) => {
-    // const reader = new FileReader();
-    // reader.readAsDataURL(event.target.files[0]);
-    // reader.onloadend = () => {
-    //   setAdministratorImage(reader.result);
-    // };
-
     setAdministratorImage(event.target.files[0]);
+
+    const reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onloadend = () => {
+      setAdministratorImageViewer(reader.result);
+    };
   };
 
   const { isLoading, error, sendRequest: addAdministrator } = useHttpImages();
@@ -71,6 +72,7 @@ function NewAdminForm() {
 
     setAdministratorName("");
     setAdministratorImage(null);
+    setAdministratorImageViewer("");
     setEmail("");
     setPassword("");
     setConfirmedPassword("");
@@ -97,6 +99,7 @@ function NewAdminForm() {
       </div>
       <div className={styles.inputs}>
         <label className={styles.labels}>Admin Image</label>
+        {administratorImageViewer && <img src={administratorImageViewer} alt="administrator" />}
         <label htmlFor="administratorimage" className={styles.filelabel}>
           upload the administrator image
           <UploadFileIcon />

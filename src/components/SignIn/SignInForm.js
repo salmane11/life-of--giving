@@ -18,9 +18,10 @@ function SignInForm() {
     if (!error) {
       userctx.login(
         contextData.id,
-        contextData.email,
+        contextData.name,
         contextData.role,
-        contextData.token
+        contextData.token,
+        contextData.image
       );
       if (contextData.role === "ADMIN") {
         navigate("/administrator-dashboard");

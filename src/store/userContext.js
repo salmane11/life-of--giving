@@ -5,7 +5,7 @@ const userContext = React.createContext({
   userName: "",
   userRole: "",
   userToken: "",
-  userImage:"",
+  userImage: "",
   loggedIn: false,
   login: (id, name, role, token) => {},
   logout: () => {},
@@ -43,12 +43,12 @@ export const UserContextProvider = (props) => {
     setUserId(id);
     setUserToken(token);
     setLoggedIn(true);
-    setUserImage(image);
+    setUserImage(image ? image : "/images/inko.png");
     localStorage.setItem("userName", user);
     localStorage.setItem("userRole", role);
     localStorage.setItem("userId", id);
     localStorage.setItem("userToken", token);
-    localStorage.setItem("userImage", image);
+    localStorage.setItem("userImage", image ? image : "/images/inko.png");
     localStorage.setItem("loggedIn", true);
     console.log(user, token);
   };

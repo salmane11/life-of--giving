@@ -38,6 +38,10 @@
   flex-direction: column;
   margin-bottom: 20px;
 }
+.inputs p{
+  font-family: var(--normal-font);
+  color: var(--fourth-color);
+}
 .inputs img {
   width: 90px;
   height: 90px;
@@ -87,4 +91,8 @@
 }
 .link {
   text-align: center;
+}
+.error{
+  text-align: center;
+  color:red;
 }

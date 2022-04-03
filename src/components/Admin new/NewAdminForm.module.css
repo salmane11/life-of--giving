@@ -12,6 +12,12 @@
   justify-content: space-around;
   padding: 10px 0;
 }
+.inputs img {
+  width: 90px;
+  height: 90px;
+  margin :5px 0px;
+  border-radius :5px;
+}
 .labels {
   flex: 0.2;
   text-align: center;

@@ -2,30 +2,47 @@ import styles from "./ModifyProfile.module.css";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import Button from "../ui/Button";
 import { useCallback, useContext, useEffect, useState } from "react";
-import useHttp, { organizationshost } from "../../store/requests";
+import useHttp, {
+  organizationshost,
+  useHttpImages,
+} from "../../store/requests";
 import userContext from "../../store/userContext";
 
 function ModifyProfile() {
   const [organizationName, setOrganizationName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [facebook, setFacebook] = useState("www.facebook.com/AlYussr");
-  const [instagram, setInstagram] = useState("www.Instagram.com/AlYussr");
+  const [organizationCategory, setOrganizationCategory] = useState("");
+  const [organizationLocation, setOrganizationLocation] = useState("");
 
   const [organizationImage, setOrganizationImage] =
-    useState("/images/logo.png");
+    useState("/images/inko.png");
+  const [organizationImageViewer, setOrganizationImageViewer] =
+    useState("/images/inko.png");
   const [organizationDescription, setOrganizationDescription] = useState("");
 
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmedNewPassword, setconfirmedNewPassword] = useState("");
+  const [formError, setFormError] = useState("");
 
   const userctx = useContext(userContext);
   const transformProfileInformations = useCallback((object) => {
-    setOrganizationName(object.name);
+    console.log(object);
+    setOrganizationName(object.name ? object.name : "your name");
     setEmail(object.email);
-    setPhone("+212612345678");
-    setOrganizationDescription(object.description);
+    setOrganizationCategory(
+      object.category ? object.category : "your category"
+    );
+    setOrganizationLocation(
+      object.location ? object.location : "your location"
+    );
+    setPhone(object.phoneNumber ? object.phoneNumber : "yourPhoneNumber");
+    setOrganizationDescription(
+      object.description ? object.description : "your description"
+    );
+    setOrganizationImage(object.image ? object.image : "/images/inko.png");
+    setOrganizationImageViewer(object.image ? object.image : "/images/inko.png");
   }, []);
   const { profileIsLoading, profileError, sendRequest: getProfile } = useHttp();
   useEffect(() => {
@@ -59,16 +76,21 @@ function ModifyProfile() {
     setPhone(event.target.value);
   };
 
-  const facebookHandler = (event) => {
-    setFacebook(event.target.value);
+  const categoryHandler = (event) => {
+    setOrganizationCategory(event.target.value);
   };
 
-  const instagramHandler = (event) => {
-    setInstagram(event.target.value);
+  const locationHandler = (event) => {
+    setOrganizationLocation(event.target.value);
   };
 
   const organizationImageHandler = (event) => {
     setOrganizationImage(event.target.files[0]);
+    const reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onloadend = () => {
+      setOrganizationImageViewer(reader.result);
+    };
   };
 
   const organizationDescriptionHandler = (event) => {
@@ -87,26 +109,33 @@ function ModifyProfile() {
     setconfirmedNewPassword(event.target.value);
   };
 
-  const { isLoading, error, sendRequest: updateProfile } = useHttp();
+  const { isLoading, error, sendRequest: updateProfile } = useHttpImages();
   const submitHandler = (event) => {
     event.preventDefault();
-    let profile = {
-      name: organizationName,
-      email,
-      phone,
-      facebook,
-      instagram,
-      description: organizationDescription,
-    };
-    if (currentPassword !== "") {
-      profile = { ...profile, password: newPassword };
+
+    if (newPassword !== confirmedNewPassword) {
+      setFormError("* password and confirmed password are different");
+      return;
     }
+
+    const profile = new FormData();
+    profile.append("name", organizationName);
+    profile.append("image", organizationImage);
+    profile.append("email", email);
+    profile.append("category", organizationCategory);
+    profile.append("location", organizationLocation);
+    profile.append("phoneNumber", phone);
+    profile.append("description", organizationDescription);
+
+    if (currentPassword !== "") {
+      profile.append("password", newPassword);
+    }
+
     updateProfile(
       {
         url: organizationshost + `/organisations/profile/${userctx.userId}`,
         method: "put",
         headers: {
-          "Content-Type": "Application/json",
           Authorization: userctx.userToken,
         },
         body: profile,
@@ -127,11 +156,19 @@ function ModifyProfile() {
         />
         <input type="email" value={email} onChange={emailHandler} />
         <input type="text" value={phone} onChange={phoneHandler} />
-        <input type="text" value={facebook} onChange={facebookHandler} />
-        <input type="text" value={instagram} onChange={instagramHandler} />
+        <input
+          type="text"
+          value={organizationCategory}
+          onChange={categoryHandler}
+        />
+        <input
+          type="text"
+          value={organizationLocation}
+          onChange={locationHandler}
+        />
       </div>
       <div className={styles.description}>
-        <img src={organizationImage} alt="logo" />
+        <img src={organizationImageViewer} alt="logo" />
         <label htmlFor="image">
           <UploadFileIcon />
         </label>
@@ -160,6 +197,7 @@ function ModifyProfile() {
           onChange={confirmedNewPasswordHandler}
         />
         <Button>Modify</Button>
+        {formError && <p className={styles.error}>{formError}</p>}
       </div>
     </form>
   );

@@ -21,7 +21,7 @@ function AssociationsList() {
     for (var key in list) {
       associations.push({
         associationId: list[key].id,
-        image: "/images/logo5.png",
+        image: list[key].image ? list[key].image : "/images/inko.png",
         name: list[key].name,
         category: list[key].category,
         location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
@@ -46,7 +46,7 @@ function AssociationsList() {
       },
       transformAssociations
     );
-  }, [getAssociations,userctx.userToken]);
+  }, [getAssociations, userctx.userToken]);
 
   const [filteredAssociations, setFilteredAssociations] =
     useState(loadedAssociations);

@@ -3,19 +3,20 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 import styles from "./DonorSignUp.module.css";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
-import useHttp, { host } from "../../store/requests";
+import { host, useHttpImages } from "../../store/requests";
 
 function OrganizationSignUp() {
-
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const [organizationName, setOrganizationName] = useState("");
+  const [organizationLogoViewer, setOrganizationLogoViewer] = useState("");
   const [organizationLogo, setOrganizationLogo] = useState(null);
   const [organizationFile, setOrganizationFile] = useState(null);
   const [organizationDescription, setOrganizationDescription] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmedPassword, setConfirmedPassword] = useState("");
+  const [formError, setFormError] = useState("");
 
   const emailHandler = (event) => {
     // event.target.value give the access to every change in the input
@@ -36,43 +37,58 @@ function OrganizationSignUp() {
 
   const organizationLogoHandler = (event) => {
     setOrganizationLogo(event.target.files[0]);
+
+    const reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onloadend = () => {
+      setOrganizationLogoViewer(reader.result);
+    };
   };
 
   const organizationFileHandler = (event) => {
     setOrganizationFile(event.target.files[0]);
+    console.log(event.target.files[0]);
   };
   const organizationDescriptionHandler = (event) => {
     setOrganizationDescription(event.target.value);
   };
 
   //use an existing customized hook to post informations to database
-  const { isLoading, error, sendRequest: signup } = useHttp();
+  const { isLoading, error, sendRequest: signup } = useHttpImages();
 
   const submitHandler = (event) => {
     //to prevent page refresh on every submit
     event.preventDefault();
 
+    if (password !== confirmedPassword) {
+      setFormError("* password and confirmed password are different");
+      return;
+    }
+
     console.log({
       organizationFile,
       organizationLogo,
     });
+
+    const data = new FormData();
+    data.append("name", organizationName);
+    data.append("email", email);
+    data.append("description", organizationDescription);
+    data.append("image", organizationLogo);
+    data.append("verificationFile", organizationFile);
+    data.append("password", password);
+
     signup(
       {
         url: host + "/signup/organisations",
         method: "post",
-        headers: { "Content-Type": "Application/json" },
-        body: {
-          name: organizationName,
-          image:organizationLogo,
-          email,
-          password,
-          description: organizationDescription,
-        },
+        body: data,
       },
-      (data) => {console.log(data);}
+      (data) => {
+        console.log(data);
+        navigate("/sign-in");
+      }
     );
-
-    navigate("/sign-in")
 
     setOrganizationName("");
     setOrganizationLogo(null);
@@ -98,6 +114,9 @@ function OrganizationSignUp() {
         </div>
         <div className={styles.inputs}>
           <label>organization Logo</label>
+          {organizationLogoViewer && (
+            <img src={organizationLogoViewer} alt="organization" />
+          )}
           {/**to style the input file type you need to hide the input tag (display : none) and use the htmlFor
            * to rely the label with his input and style the label as you want */}
           <label htmlFor="organizationlogo" className={styles.filelabel}>
@@ -117,6 +136,7 @@ function OrganizationSignUp() {
             upload your file
             <UploadFileIcon />
           </label>
+          {organizationFile && <p>{organizationFile.name}</p>}
           <input
             type="file"
             id="organizationfile"
@@ -162,7 +182,8 @@ function OrganizationSignUp() {
         </div>
         <Button>SignUp</Button>
         {isLoading && <p>isLoading ...</p>}
-        {error && <p>{error}</p>}
+        {error && <p className={styles.error}>{error}</p>}
+        {formError && <p className={styles.error}>{formError}</p>}
       </form>
       <Link className={styles.link} to="/sign-in">
         sign in

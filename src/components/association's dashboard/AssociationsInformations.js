@@ -14,6 +14,7 @@ function AssociationsInformations() {
   const transformInformations = (data) => {
     setAssociationsInformations({
       associationName: data.name,
+      associationImage:data.image,
       associationDescription: data.description,
       location: data.location,
       phone: data.phoneNumber,
@@ -37,7 +38,9 @@ function AssociationsInformations() {
   }, [getAssociationsInfo, userctx.userId, userctx.userToken]);
   return (
     <div className={styles.informations}>
-      <img src="/images/logo.png" alt="logo" />
+      <img src={associationsInformations.associationImage
+          ? associationsInformations.associationImage
+          : "/images/inko.png"} alt="logo" />
       <h1>
         {associationsInformations.associationName
           ? associationsInformations.associationName
