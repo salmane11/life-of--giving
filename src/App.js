@@ -27,6 +27,7 @@ import DonorProfileDonationHistory from "./pages/DonorProfileDonationHistory";
 import AssociationsDashboardPage from "./pages/AssociationsDashboardPage";
 import NotFoundError from "./pages/NotFoundError";
 import AboutUsPage from "./pages/AboutUsPage";
+import UpdateProjectPage from "./pages/UpdateProjectPage";
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
         <Route path='/post-project' element={<PostProjectPage  className="element"/>}></Route>
         <Route path="/association-dashboard" element={<AssociationsDashboardPage/>} />
         <Route path="/organization-profile" element={<AssociationProfileUpdatePage/>} />
+        <Route path="/update-project" element={<UpdateProjectPage/>} />
         </>}
 
         <Route path="/donors"exact element={<DonorsListPage className="element"/>}  />
