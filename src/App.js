@@ -44,13 +44,14 @@ function App() {
         <Route path="/projects" element={<Projects className="element"/>} />
         <Route path="/project-description" element={<ProjectDescription className="element"/>} />
         <Route path='/donation' element={<DonationPage className="element"/>} />
+        <Route path="/update-project" element={<UpdateProjectPage/>} /> 
 
         <Route path="/associations" element={<AssociationPage/>} />
         {userctx.userRole==="ORGANISATION" && <> 
         <Route path='/post-project' element={<PostProjectPage  className="element"/>}></Route>
         <Route path="/association-dashboard" element={<AssociationsDashboardPage/>} />
         <Route path="/organization-profile" element={<AssociationProfileUpdatePage/>} />
-        <Route path="/update-project" element={<UpdateProjectPage/>} />
+        {/* <Route path="/update-project" element={<UpdateProjectPage/>} /> */}
         </>}
 
         <Route path="/donors"exact element={<DonorsListPage className="element"/>}  />
