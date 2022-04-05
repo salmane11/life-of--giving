@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from './ProjectForm.module.css'
-import useHttp, { host } from "../../store/requests";
+import useHttp, { host, organizationshost, useHttpImages } from "../../store/requests";
+import userContext from '../../store/userContext';
 
 const ProjectForm = () => {
 
     const [projectDescription,setProjectDescription] = useState("");
-    const [projectImage, setProjectImage] = useState(null);
+    const [projectImage, setProjectImage] = useState("");
     const [projectTitle, setProjectTitle] = useState("");
     const [organizationName, setOrganizationName] = useState("");
-    const [dueDate, setDueDate] = useState("");
+    const [dueDate, setDueDate] = useState(new Date());
     const [moneyTarget, setMoneyTarget] = useState("");
     const [donationCategory, setDonationCategory] = useState("");
     const [projectEntity, setProjectEntity] = useState("");
@@ -46,29 +47,36 @@ const ProjectForm = () => {
         setProjectEntityValue(event.target.value);
     }
 
-    const {isLoading, error, sendRequest: postProject} = useHttp();
+    const userctx=useContext(userContext);
+
+    const {isLoading, error, sendRequest: postProject} = useHttpImages();
 
     const submitHandler = (event) => {
         event.preventDefault();
         console.log(projectImage);
         console.log(projectTitle);
         console.log(organizationName);
+        console.log(projectDescription);
         // Post the project data into backend
+
+        const project=new FormData();
+        project.append("title",projectTitle);
+        project.append("description",projectDescription);
+        project.append("image",projectImage);
+        project.append("orgId",userctx.userId);
+        project.append("dateLimit",dueDate);
+        project.append("target",+moneyTarget);
+        project.append("currentBalance",0);
+
+        // project.append("category",donationCategory);
+        // project.append("projectEntity",projectEntity);
+        // project.append("project",projectEntityValue);
+
         postProject( {
-            url: host + "/pojects",
+            url: organizationshost + "/organisations/projects",
             method: "post",
-            headers: {"Content-Type":"Application/json"},
-            body: {
-                title: projectTitle,
-                description: projectDescription,
-                image: projectImage,
-                organizationName: organizationName,
-                limiteDate: dueDate,
-                target: moneyTarget,
-                category: donationCategory,
-                projectEntity: projectEntity,
-                projectEntityValue: projectEntityValue
-            },
+            headers: {Authorization:userctx.userToken},
+            body: project,
         },
         (data) => {console.log(data);} 
     );
@@ -105,7 +113,6 @@ const ProjectForm = () => {
                         className={styles.formInput}
                         name="projectImage" 
                         type="file"
-                        value={projectImage}
                         onChange={ projectImageHandler }
                         />
                     </div>
@@ -118,16 +125,6 @@ const ProjectForm = () => {
                         placeholder="e.g Winter is coming"
                         onChange={projectTitleHandler}
                         />
-                    </div>
-                    <div>
-                        <label htmlFor='organizationName'>Organization Name</label> <br/>
-                        <input  
-                            className={styles.formInput}
-                            required 
-                            placeholder="the organization name"
-                            name="organizationName" 
-                            onChange={organizationNameHandler}
-                            value={organizationName}/>
                     </div>
                     <div>
                         <label htmlFor='limiteDate'>Due Date of the project</label> <br/>

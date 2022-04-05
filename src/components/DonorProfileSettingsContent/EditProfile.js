@@ -1,15 +1,18 @@
-import styles from './EditProfile.module.css';
-import Button from '../ui/Button';
-import Select from 'react-select';
-import { useState } from 'react';
-import useHttp, { donationshost, host } from "../../store/requests";
-import userContext from '../../store/userContext';
-import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import styles from "./EditProfile.module.css";
+import Button from "../ui/Button";
+import Select from "react-select";
+import { useState } from "react";
+import useHttp, {
+  donationshost,
+  host,
+  useHttpImages,
+} from "../../store/requests";
+import userContext from "../../store/userContext";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function EditProfile() {
   const userctx = useContext(userContext);
-  const navigate = useNavigate;
 
   const [donorName, setDonorName] = useState("");
   const [donorAddress, setDonorAddress] = useState("");
@@ -19,7 +22,6 @@ function EditProfile() {
   const [donorFb, setDonorFb] = useState("");
   const [donorInsta, setDonorInsta] = useState("");
   const [donorTwit, setDonorTwit] = useState("");
-
 
   const donorNameHandler = (event) => {
     setDonorName(event.target.value);
@@ -47,29 +49,42 @@ function EditProfile() {
   const twitterHandler = (event) => {
     setDonorTwit(event.target.value);
   };
-  const { isLoading, error, sendRequest: editprofilesettings } = useHttp();
+  const {
+    isLoading,
+    error,
+    sendRequest: editprofilesettings,
+  } = useHttpImages();
+
+
   const submitHandler = (event) => {
     event.preventDefault();
+console.log(donorName+"this is the submit");
+    console.log({
+      name: donorName,
+      location: donorAddress,
+      phoneNumber: donorPhone,
+      privacy: donorPrivacy,
+      description: donorBio,
+    });
+
+    const formData = new FormData();
+    formData.append("name", donorName);
+    formData.append("location", donorAddress);
+    formData.append("phoneNumber", donorPhone);
+    formData.append("privacy", donorPrivacy);
+    formData.append("description", donorBio);
 
     editprofilesettings(
       {
-        url: donationshost,
-        method: "post",
+        url: host + `/donors/update-profile/${userctx.userId}`,
+        method: "put",
         headers: {
           Authorization: userctx.userToken,
         },
-        body: {
-          name: donorName,
-          location: donorAddress,
-          phoneNumber: donorPhone,
-          privacy: donorPrivacy,
-          bio: donorBio,
-
-        },
+        body: formData,
       },
-      () => { }
+      () => {}
     );
-    navigate("/sign-in");
 
     setDonorName("");
     setDonorAddress("");
@@ -79,9 +94,7 @@ function EditProfile() {
     setDonorFb("");
     setDonorInsta("");
     setDonorFb("");
-
-
-  }
+  };
 
   return (
     //here is the navigation when EditProfile is active
@@ -94,70 +107,85 @@ function EditProfile() {
           className={styles.settingsInput}
           type="text"
           name="donorName"
-          placeholder='Your name'
+          placeholder="Your name"
           onChange={donorNameHandler}
-          value={donorName} />
+          value={donorName}
+        />
         <label>Address</label>
-        <input className={styles.settingsInput}
+        <input
+          className={styles.settingsInput}
           type="text"
           name="address"
-          placeholder='Rabat, Morocco'
+          placeholder="Rabat, Morocco"
           onChange={addressHandler}
-          value={donorAddress} />
+          value={donorAddress}
+        />
 
         <label>Phone number</label>
-        <input className={styles.settingsInput}
+        <input
+          className={styles.settingsInput}
           type="tel"
           name="tel"
-          placeholder='+212612345678'
+          placeholder="+212612345678"
           onChange={phoneHandler}
-          value={donorPhone} />
+          value={donorPhone}
+        />
 
         <label>Statistics dashboard privacy</label>
         <input
           className={styles.settingsInput}
-          placeholder='Yes or No'
+          placeholder="Yes or No"
           onChange={privacyHandler}
           value={donorPrivacy}
         />
 
-        <label className={styles.subselectclass}>
-          Bio description
-        </label>
-        <textarea className={styles.bio} type="text" name='bio' size='20' placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                et dolore magna aliqua.' textarea
+        <label className={styles.subselectclass}>Bio description</label>
+        <textarea
+          className={styles.bio}
+          type="text"
+          name="bio"
+          size="20"
+          placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                et dolore magna aliqua."
+          textarea
           onChange={bioHandler}
-          value={donorBio} />
-        <label >
-          Facebook link
-        </label>
-        <input className={styles.settingsInput} type="url" name="fb" placeholder=' www.facebook.com/yourfbid'
+          value={donorBio}
+        />
+        <label>Facebook link</label>
+        <input
+          className={styles.settingsInput}
+          type="url"
+          name="fb"
+          placeholder=" www.facebook.com/yourfbid"
           onChange={fbHandler}
-          value={donorFb} />
+          value={donorFb}
+        />
 
-        <label>
-          Instagram link
-        </label>
-        <input className={styles.settingsInput} type="url" name="insta" placeholder=' www.instagram.com/yourid'
+        <label>Instagram link</label>
+        <input
+          className={styles.settingsInput}
+          type="url"
+          name="insta"
+          placeholder=" www.instagram.com/yourid"
           onChange={instaHandler}
-          value={donorInsta} />
+          value={donorInsta}
+        />
 
-        <label>
-          Twitter link
-        </label>
-        <input className={styles.settingsInput} type="url" name="twit" placeholder=' www.twitter.com/yourid'
+        <label>Twitter link</label>
+        <input
+          className={styles.settingsInput}
+          type="url"
+          name="twit"
+          placeholder=" www.twitter.com/yourid"
           onChange={twitterHandler}
-          value={donorTwit} />
+          value={donorTwit}
+        />
 
-
-
+        <span className={styles.actionForm}>
+            <Button type="submit" className={styles.saveButton}>Save changes </Button>
+            <Button className={styles.cancelButton}>Cancel</Button>
+        </span>
       </form>
-      <span className={styles.actionForm}>
-        <Link to="/donor-profile"> <button className={styles.saveButton} >Save changes </button></Link>
-        <Link to="/donor-profile"> <Button className={styles.cancelButton}>Cancel</Button></Link>
-
-      </span>
-
     </div>
   );
 }

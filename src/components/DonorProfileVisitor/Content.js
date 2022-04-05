@@ -26,7 +26,7 @@ function Content() {
       coins: loadedDonor.score,
       badge: "Master Badge",
       creation_date: "12/03/2021",
-      total_donation: 120,
+      total_donation: loadedDonor.totalDonations,
     });
   };
   const { isLoading, error, sendRequest: getDonorById } = useHttp();
@@ -34,7 +34,7 @@ function Content() {
   useEffect(() => {
     getDonorById(
       {
-        url: donationshost + `/donors/${donorId}`,
+        url: donationshost + `/donors/${donorId}/sum-donations`,
         method: "get",
         headers: {
           Authorization: userctx.userToken,

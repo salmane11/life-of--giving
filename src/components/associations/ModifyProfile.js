@@ -128,6 +128,7 @@ function ModifyProfile() {
     profile.append("description", organizationDescription);
 
     if (currentPassword !== "") {
+      profile.append("currentPassword", newPassword);
       profile.append("password", newPassword);
     }
 

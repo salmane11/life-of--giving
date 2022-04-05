@@ -12,24 +12,26 @@ import userContext from "../../store/userContext";
 
 //the list of all projects listed in the page
 function ProjectsListed() {
-
   const userctx = useContext(userContext);
 
   const [loadedProjects, setLoadedProjects] = useState([]);
-  const transformProjects=(list)=>{
-      const projects=[];
-      for(var key in list){
-          projects.push({
-            ProjectId:list[key].id,
-            name: list[key].title,
-            image: project9,
-            progression: (100*((list[key].currentBalance)/(+list[key].target))).toPrecision(4),
-            target: list[key].target,
-          })
-      }
-      console.log(projects);
-      setLoadedProjects(projects);
-  }
+  const transformProjects = (list) => {
+    const projects = [];
+    for (var key in list) {
+      projects.push({
+        ProjectId: list[key].id,
+        name: list[key].title,
+        image: list[key].image,
+        progression: (
+          100 *
+          (list[key].currentBalance / +list[key].target)
+        ).toPrecision(4),
+        target: list[key].target,
+      });
+    }
+    console.log(projects);
+    setLoadedProjects(projects);
+  };
   const { isLoading, error, sendRequest: getAllProjects } = useHttp();
 
   useEffect(() => {
@@ -44,18 +46,19 @@ function ProjectsListed() {
       },
       transformProjects
     );
-  }, [getAllProjects,userctx.userToken]);
+  }, [getAllProjects, userctx.userToken]);
 
   return (
     <>
       <div className={styles.projectsContainer}>
-          {isLoading && <p>isLoading ...</p>}
-          {error && <p>{error}</p>}
+        {isLoading && <p>isLoading ...</p>}
+        {error && <p>{error}</p>}
         {loadedProjects.map((project) => (
           <SingleProject
             key={project.ProjectId}
+            projectId={project.ProjectId}
             name={project.name}
-            src={project.image}
+            src={project.image ? project.image : "/images/inko.png"}
             progression={project.progression}
             target={project.target}
           />
