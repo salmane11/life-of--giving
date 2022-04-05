@@ -1,6 +1,8 @@
 import styles from "./DonationHistory.module.css";
 import React, { PureComponent } from "react";
 import { PieChart, Pie, Sector } from "recharts";
+import ContentTable from "./ContentTable";
+
 
 const data = [
   {
@@ -36,110 +38,110 @@ const data = [
     total_donation: 15,
   },
 ];
-const donations = [
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-  {
-    association_name: "Yusr Foundation",
-    title: "Dif2on",
-    donation_amount: "20$",
-    donation_date: "17 - 02 - 2022",
-  },
-];
+// const donations = [
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+//   {
+//     association_name: "Yusr Foundation",
+//     title: "Dif2on",
+//     donation_amount: "20$",
+//     donation_date: "17 - 02 - 2022",
+//   },
+// ];
 const name = "Your donation history";
 
 const renderActiveShape = (props) => {
@@ -233,8 +235,12 @@ export default class DonationHistory extends PureComponent {
       activeIndex: index,
     });
   };
+  
+
+  
 
   render() {
+    
     return (
       <>
         <div className={styles.donationHistory}>
@@ -268,8 +274,8 @@ export default class DonationHistory extends PureComponent {
             <div className={styles.title}>
               <h1>{name}</h1>
             </div>
-
-            <div className={styles.tablecontainer}>
+            <ContentTable></ContentTable>
+            {/* <div className={styles.tablecontainer}>
               <table>
                 <tr>
                   <th>Organization name</th>
@@ -288,7 +294,7 @@ export default class DonationHistory extends PureComponent {
                   );
                 })}
               </table>
-            </div>
+            </div> */}
           </div>
         </div>
       </>
