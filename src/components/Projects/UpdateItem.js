@@ -1,8 +1,40 @@
+import React, {useContext, useEffect} from 'react';
 import styles from './UpdateItem.module.css';
 import {Container, Row, Col} from 'react-bootstrap';
 import imageUpdate from '../../assets/3.jpg';
+import userContext from '../../store/userContext';
+import useHttp from '../../store/requests';
+import {organizationshost} from '../../store/requests'
 
 const UpdateSection = () => {
+
+    const userctx = useContext(userContext); 
+
+    const transformUpdates = (updateList) => {
+        const list = [];
+        for (var key in updateList) {
+            list.push({
+                
+            })
+        }
+    }
+
+    const {isLoading, error, sendRequest:getUpdate} = useHttp();
+
+    useEffect(() => {
+        getUpdate(
+            {
+                url: organizationshost+"/update",
+                method: "get",
+                headers: {
+                    Authorization: userctx.userToken,
+                },
+
+            },
+            transformUpdates
+        );
+    }, [userctx.userTokan, getUpdate]);
+
     return (
         <>
             <div className={styles.updateSection}>
