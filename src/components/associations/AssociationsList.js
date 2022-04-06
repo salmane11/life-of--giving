@@ -23,9 +23,9 @@ function AssociationsList() {
         associationId: list[key].id,
         image: list[key].image ? list[key].image : "/images/inko.png",
         name: list[key].name,
-        category: list[key].category,
-        location: "ALIRFANE, Rabat, Rabat-Salé-Kenitra, Maroc",
-        number: "+21212345678",
+        category: list[key].category ? list[key].category :"No Category yet",
+        location: list[key].location ? list[key].location : "adress not found",
+        number: list[key].phoneNumber ?list[key].phoneNumber:"phone not found",
       });
     }
     setLoadedAssociations(associations);

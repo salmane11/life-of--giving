@@ -15,14 +15,14 @@ function Content() {
     setDonorInfo({
       donor_name: loadedDonor.name,
       donor_image: loadedDonor.image,
-      donor_score: loadedDonor.score,
-      coins: loadedDonor.score,
+      donor_score: loadedDonor.score ?loadedDonor.score: (Math.random()*100).toPrecision(2),
+      coins: loadedDonor.score ?loadedDonor.score: (Math.random()*100).toPrecision(2),
       donor_bio:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
       donor_location: loadedDonor.location,
-      donor_fb: "/John Wick",
-      donor_insta: "/John_Wick",
-      donor_ytb: "/John-Wick",
+      donor_fb: `. /${loadedDonor.name}`,
+      donor_insta: `. /${loadedDonor.name}`,
+      donor_ytb: `. /${loadedDonor.name}`,
       badge: "Master Badge",
     });
   };

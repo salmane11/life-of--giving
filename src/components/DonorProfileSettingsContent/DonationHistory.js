@@ -38,110 +38,7 @@ const data = [
     total_donation: 15,
   },
 ];
-// const donations = [
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-//   {
-//     association_name: "Yusr Foundation",
-//     title: "Dif2on",
-//     donation_amount: "20$",
-//     donation_date: "17 - 02 - 2022",
-//   },
-// ];
+
 const name = "Your donation history";
 
 const renderActiveShape = (props) => {
@@ -157,7 +54,7 @@ const renderActiveShape = (props) => {
     fill,
     payload,
     percent,
-    total_donation,
+    sum,
   } = props;
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(-RADIAN * midAngle);
@@ -179,7 +76,7 @@ const renderActiveShape = (props) => {
         textAnchor="middle"
         fill={fill}
       >
-        {payload.association_name}
+        {payload.name}
       </text>
       <Sector
         cx={cx}
@@ -211,7 +108,7 @@ const renderActiveShape = (props) => {
         textAnchor={textAnchor}
         fontFamily="Poppins"
         fill="#ffc900"
-      >{`${total_donation} $`}</text>
+      >{`${sum} $`}</text>
       <text
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}
@@ -250,13 +147,13 @@ export default class DonationHistory extends PureComponent {
               <Pie
                 activeIndex={this.state.activeIndex}
                 activeShape={renderActiveShape}
-                data={data}
+                data={this.props.data}
                 cx={230}
                 cy={130}
                 innerRadius={75}
                 outerRadius={100}
                 fill="#086e7d"
-                dataKey="total_donation"
+                dataKey="sum"
                 onMouseEnter={this.onPieEnter}
               />
             </PieChart>
@@ -275,26 +172,6 @@ export default class DonationHistory extends PureComponent {
               <h1>{name}</h1>
             </div>
             <ContentTable></ContentTable>
-            {/* <div className={styles.tablecontainer}>
-              <table>
-                <tr>
-                  <th>Organization name</th>
-                  <th>Project’s name</th>
-                  <th>Donation</th>
-                  <th>Date</th>
-                </tr>
-                {donations.map((element, key) => {
-                  return (
-                    <tr key={key}>
-                      <td>{element.association_name}</td>
-                      <td>{element.title}</td>
-                      <td>{element.donation_amount}</td>
-                      <td>{element.donation_date}</td>
-                    </tr>
-                  );
-                })}
-              </table>
-            </div> */}
           </div>
         </div>
       </>
