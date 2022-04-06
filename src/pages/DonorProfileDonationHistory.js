@@ -25,7 +25,7 @@ function DonorProfileDonationHistory(){
     return(
        <div className={styles.container}>
         <Content></Content>
-        <DonationHistory data={historyDonations}></DonationHistory>
+        <DonationHistory data={historyDonations} ></DonationHistory>
         </div>
     );
 }

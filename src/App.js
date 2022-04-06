@@ -52,7 +52,7 @@ function App() {
         <Route path='/post-project' element={<PostProjectPage  className="element"/>}></Route>
         <Route path="/association-dashboard" element={<AssociationsDashboardPage/>} />
         <Route path="/organization-profile" element={<AssociationProfileUpdatePage/>} />
-        <Route path="/update-project" element={<UpdateProjectPage/>} />
+        <Route path="/update-project/:projectId" element={<UpdateProjectPage/>} />
         </>}
 
         <Route path="/donors"exact element={<DonorsListPage className="element"/>}  />

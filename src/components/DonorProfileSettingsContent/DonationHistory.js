@@ -163,7 +163,7 @@ export default class DonationHistory extends PureComponent {
             <h4>Total of donations</h4>
           </div>
           <div className={styles.totalOrganizations}>
-            <h2>20</h2>
+            <h2>{20}</h2>
             <h4>Total of organization that you helped</h4>
           </div>
 

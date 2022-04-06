@@ -38,7 +38,7 @@ const ProjectDescription = () => {
                 <ProjectTextDescription projectInformations={projectInformations}/>
                 <ProjectOrganization organizationId={projectInformations.orgId}/>
                 <TitleSection title={'Updates'}/>
-                <UpdateSection/>
+                <UpdateSection projectId={projectId}/>
             </div>
         </>
     )

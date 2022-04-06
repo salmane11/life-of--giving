@@ -1,11 +1,14 @@
 import React, { useState, useContext } from "react";
 import styles from "./UpdateProject.module.css";
-import useHttp, { host } from "../../store/requests";
+import useHttp, { organizationshost, useHttpImages } from "../../store/requests";
 import userContext from '../../store/userContext'
+import { useParams } from "react-router-dom";
 
 const UpdateProject = () => {
   const [projectDescription, setProjectDescription] = useState("");
-  const [projectImage, setProjectImage] = useState(null);
+  const [projectImage, setProjectImage] = useState("");
+
+  const {projectId}=useParams("projectId");
 
   const projectDescriptionHandler = (event) => {
     setProjectDescription(event.target.value);
@@ -14,23 +17,29 @@ const UpdateProject = () => {
     setProjectImage(event.target.files[0]);
   };
 
-  const { isLoading, error, sendRequest: postProject } = useHttp();
+  const { isLoading, error, sendRequest: postProject } = useHttpImages();
   const userctx = useContext(userContext);
 
   const submitHandler = (event) => {
     event.preventDefault();
     // Post the project data into backend
+    console.log(projectId, projectImage,projectDescription);
+
+    const updates=new FormData();
+    updates.append("projectId",projectId);
+    updates.append("description",projectDescription);
+    if(projectImage){
+      updates.append("image",projectImage);
+    }
+
     postProject(
       {
-        url: host + "/pojects",
+        url: organizationshost + "/organ/updates",
         method: "post",
         headers: { 
           Authorization: userctx.userToken,
         },
-        body: {
-          description: projectDescription,
-          image: projectImage,
-        },
+        body: updates,
       },
       (data) => {
         console.log(data);

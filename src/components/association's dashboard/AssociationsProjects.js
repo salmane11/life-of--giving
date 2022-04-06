@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import useHttp, { organizationshost } from "../../store/requests";
 import userContext from "../../store/userContext";
 import styles from "./AssociationsProjects.module.css";
@@ -47,6 +48,7 @@ function AssociationsProjects() {
             <td> target</td>
             <td>current balence</td>
             <td>limit date</td>
+            <td>update</td>
           </tr>
         </thead>
         <tbody>
@@ -56,6 +58,7 @@ function AssociationsProjects() {
               <td>{project.target}</td>
               <td>{project.currentBalance}</td>
               <td>{project.limitDate ? project.limitDate :"no limit date"}</td>
+              <td><Link to={`/update-project/${project.projectId}`}>add update</Link></td>
             </tr>
           ))}
         </tbody>

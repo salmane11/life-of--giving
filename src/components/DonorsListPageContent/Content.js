@@ -23,7 +23,7 @@ function Content(props) {
             <div key={element.donor_image}>
 
                 <img src={element.donor_image} alt={element.name} />
-                <div className={styles.score}>{element.donor_score}</div>
+                <div className={styles.score}>{element.donor_score?element.donor_score:(Math.random()*100).toPrecision(2)}</div>
                 <div className={styles.description}>
                     <h1>{element.donor_name}</h1>
                     <div className={styles.socialNet}>

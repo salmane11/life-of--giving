@@ -2,11 +2,11 @@ import {TitleSection} from './ProjectOrganization';
 import UpdateItem from './UpdateItem';
 import styles from './UpdateItem.module.css';
 
-const Updates = () => {
+const Updates = (props) => {
     return (
         <>
             <TitleSection title={'Updates'}/>    
-            <UpdateItem />
+            <UpdateItem projectId={props.projectId}/>
         </>
     )
 }
