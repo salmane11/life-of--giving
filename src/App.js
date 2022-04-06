@@ -42,7 +42,7 @@ function App() {
         <Route path="/about-us" element={<AboutUsPage className="element"/>} />
         <Route path="/projects" element={<Projects className="element"/>} />
         <Route path="/project-description/:projectId" element={<ProjectDescription className="element"/>} />
-        <Route path='/donation' element={<DonationPage className="element"/>} />
+        <Route path='/donation/:projectId' element={<DonationPage className="element"/>} />
 
         <Route path="/associations" element={<AssociationPage/>} />
         {userctx.userRole==="ORGANISATION" && <> 

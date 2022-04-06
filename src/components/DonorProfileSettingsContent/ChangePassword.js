@@ -38,6 +38,7 @@ function ChangePassword() {
         url: host + "/donors/reset-password",
         method: "post",
         headers: {
+          "Content-Type":"application/json",
           Authorization: userctx.userToken,
         },
         body: {
@@ -47,7 +48,7 @@ function ChangePassword() {
           newPassAgain: confirmedPassword,
         },
       },
-      () => {}
+      (data) => {console.log(data)}
     );
 
     setPassword("");

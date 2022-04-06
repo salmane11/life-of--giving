@@ -34,7 +34,7 @@ const ProjectDescription = () => {
     return (
         <>
             <div className={styles.projectsPage}>
-                <ProjectContent projectInformations={projectInformations}/>
+                <ProjectContent projectId={projectId} projectInformations={projectInformations}/>
                 <ProjectTextDescription projectInformations={projectInformations}/>
                 <ProjectOrganization organizationId={projectInformations.orgId}/>
                 <TitleSection title={'Updates'}/>

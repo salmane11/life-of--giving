@@ -16,7 +16,7 @@ function ModifyProfile() {
   const [organizationLocation, setOrganizationLocation] = useState("");
 
   const [organizationImage, setOrganizationImage] =
-    useState("/images/inko.png");
+    useState("");
   const [organizationImageViewer, setOrganizationImageViewer] =
     useState("/images/inko.png");
   const [organizationDescription, setOrganizationDescription] = useState("");
@@ -41,7 +41,6 @@ function ModifyProfile() {
     setOrganizationDescription(
       object.description ? object.description : "your description"
     );
-    setOrganizationImage(object.image ? object.image : "/images/inko.png");
     setOrganizationImageViewer(object.image ? object.image : "/images/inko.png");
   }, []);
   const { profileIsLoading, profileError, sendRequest: getProfile } = useHttp();
@@ -117,10 +116,12 @@ function ModifyProfile() {
       setFormError("* password and confirmed password are different");
       return;
     }
-
+    console.log(organizationCategory, organizationName);
     const profile = new FormData();
     profile.append("name", organizationName);
-    profile.append("image", organizationImage);
+    if(organizationImage){
+      profile.append("image", organizationImage);
+    }
     profile.append("email", email);
     profile.append("category", organizationCategory);
     profile.append("location", organizationLocation);
@@ -128,7 +129,7 @@ function ModifyProfile() {
     profile.append("description", organizationDescription);
 
     if (currentPassword !== "") {
-      profile.append("currentPassword", newPassword);
+      profile.append("currentPassword", currentPassword);
       profile.append("password", newPassword);
     }
 

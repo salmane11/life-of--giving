@@ -5,26 +5,26 @@ import image2 from '../../assets/5.jpg';
 import image3 from '../../assets/1.jpg'
 
 // the slider of the images of a project created using react bootstrap
-const ProjectCarousel = () => {
+const ProjectCarousel = (props) => {
     return (
         <Carousel className={styles.carousel}>
             <Carousel.Item interval={4000}>
                 <img
                 className="d-block w-100"
-                src={image1}
+                src={props.image ? props.image :"/images/inko.png"}
                 alt="First slide"
                 />
             </Carousel.Item>
             <Carousel.Item interval={4000}>
                 <img
                 className="d-block w-100"
-                src={image2}
+                src={props.image ? props.image :"/images/inko.png"}
                 alt="Second slide"
                 />
             </Carousel.Item>
             <Carousel.Item interval={4000}>
                 <img className="d-block w-100"
-                src={image3}
+                src={props.image ? props.image :"/images/inko.png"}
                 alt="Third slide"
                 />
             </Carousel.Item>

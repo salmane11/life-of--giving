@@ -18,15 +18,15 @@ function Content() {
   const transformDonor = (loadedDonor) => {
     setDonor({
       donor_name: loadedDonor.name,
-      donor_fb: "/John Wick",
-      donor_insta: "/John_Wick",
-      donor_ytb: "/John-Wick",
+      donor_fb: `/${loadedDonor.name}`,
+      donor_insta: `/${loadedDonor.name}`,
+      donor_ytb: `/${loadedDonor.name}`,
       donor_image: loadedDonor.image,
       donor_score: loadedDonor.score,
-      coins: loadedDonor.score,
+      coins: loadedDonor.score ? loadedDonor.score : (Math.random()*100).toPrecision(2),
       badge: "Master Badge",
       creation_date: "12/03/2021",
-      total_donation: loadedDonor.totalDonations,
+      total_donation: loadedDonor.totalDonations ? loadedDonor.totalDonations : 0,
     });
   };
   const { isLoading, error, sendRequest: getDonorById } = useHttp();

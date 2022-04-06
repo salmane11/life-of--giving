@@ -7,14 +7,14 @@ import { useNavigate } from 'react-router-dom'
 
 // the section of slider and the metadata of the project
 // including the due date, the target and the donate button
-const ProjectContent = ({projectInformations}) => {
+const ProjectContent = ({projectInformations, projectId}) => {
     const navigate=useNavigate();
     return (
         <>
             <h1 id={styles.projectTitle}>{projectInformations.title}</h1>
             <div className={styles.imageContainer}>
                   {/* <img src={image1} alt='project-picture'/> */}
-                    <ProjectCarousel />
+                    <ProjectCarousel image={projectInformations.image}/>
                 <div className={styles.description}>
                     <h2 className={styles.dueDate}>Due date: {projectInformations.dateLimit?projectInformations.dateLimit:"some day"}</h2>
                     <label> {projectInformations.currentBalance} raised of {projectInformations.target} target </label>
@@ -26,7 +26,7 @@ const ProjectContent = ({projectInformations}) => {
                             height ={40}
                             className= {styles.wrapper}
                         />
-                    <Button onClick={()=>{navigate("/donation")}} className={styles.donateBtn}>Donate Now</Button>
+                    <Button onClick={()=>{navigate(`/donation/${projectId}`)}} className={styles.donateBtn}>Donate Now</Button>
                 </div>
             </div>
         </>
