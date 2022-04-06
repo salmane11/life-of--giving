@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Project Definition 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Within the context of supporting humanitarian business organizations financially, our team decided to take a humanitarian action to provide help through a donation collection platform aiming to raise awareness to touch people's philanthropic side so that they commit to help and contribute to the development of the society.
 
-## Available Scripts
+# App Features
+This modern web application (SPA, Responsive Design, etc.) offers the features briefly listed below: 
 
-In the project directory, you can run:
+## Access as an anonymous visitor (donor):
 
-### `npm start`
+- See a brief description of the application in the homepage+about us
+- See the list of organizations asking for donations
+- Make a donation (fill in all the necessary data for banking transactions in case of anonymous donor).
+- View a publication of an organization.
+- Filter a publication by category 
+- View videos of some of the humanitarian activities already carried out by donation collectors.
+- Register as a new user (optional)
+- Authenticate (optional)
+- Log out (optional)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Access as a donation collector (organization) :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Register(data required for organization verification by administrator).
+- Authenticate yourself.
+- Create a publication containing information about your humanitarian project.
+- Edit your profile information
+- Add videos that share with donors the progress of humanitarian activities already carried out.
+- Consult the progress of your publications (number of donors, amount of money, percentage of achievement of your goal, number of times a publication is viewed).
+- Log out
 
-### `npm test`
+## Access as an administrator of the application: 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Authenticate yourself.
+Verify and approve or reject the registration of a beneficiary (an organization)
+Remove a claimed organization corrupted by several donors
+Display a dashboard containing all the actions carried out within the system (number of donors, organizations, publications, total amount of donations ...).
+Log out.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
