@@ -159,11 +159,11 @@ export default class DonationHistory extends PureComponent {
             </PieChart>
           </div>
           <div className={styles.totalDonations}>
-            <h2>$205</h2>
+            <h2>${this.props.total}</h2>
             <h4>Total of donations</h4>
           </div>
           <div className={styles.totalOrganizations}>
-            <h2>{20}</h2>
+            <h2>{this.props.number}</h2>
             <h4>Total of organization that you helped</h4>
           </div>
 

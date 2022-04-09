@@ -1,8 +1,8 @@
 import { useState, useCallback } from 'react';
 
-export const host="http://localhost:8090";
-export const organizationshost="http://localhost:8081";
-export const donationshost="http://localhost:8082";
+export const host="http://ec2-15-188-76-171.eu-west-3.compute.amazonaws.com:9090/account-management-service";
+export const organizationshost="http://ec2-15-188-76-171.eu-west-3.compute.amazonaws.com:9090/organisation-service";
+export const donationshost="http://ec2-15-188-76-171.eu-west-3.compute.amazonaws.com:9090/donation-service";
 
 const useHttp = () => {
   const [isLoading, setIsLoading] = useState(false);

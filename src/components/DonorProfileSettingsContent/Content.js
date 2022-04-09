@@ -15,7 +15,7 @@ function Content() {
             donor_bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
             donor_location: loadedDonor.location,
             donor_image: loadedDonor.image,
-            coins: loadedDonor.score,
+            coins: loadedDonor.score ? loadedDonor.score:(Math.random()*100).toPrecision(2),
             badge: "Master Badge"
 
         });
